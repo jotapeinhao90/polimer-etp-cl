@@ -1,843 +1,455 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETP Polimer | Proveedor de Empaques Flexibles para Empresas</title>
-    <meta name="description" content="Proveedor industrial de empaques flexibles para retail, agroindustria, alimentos y farmacia. Pedidos desde grandes volúmenes. Fabricante directo en Chile.">
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- ✅ GA4 — reemplazar G-XXXXXXXXXX por tu Measurement ID real -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- ✅ Google Ads conversion tracking — reemplazar AW-XXXXXXXXXX/XXXX por tu ID real -->
-    <script>
-      function gtag_report_conversion() {
-        gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/XXXX'});
-        return true;
-      }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETP Polimer — Empaques Flexibles B2B para Empresas en Chile</title>
+  <meta name="description" content="Fabricantes de empaques flexibles de polietileno en Chile. Bolsas industriales, films y formatos especiales para retail, agroindustria y alimentos. Pedido mínimo 300 kg.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-    <div class="container top-bar-inner">
-        <div class="top-bar-left">
-            <a href="tel:+56944843503">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                +569 4484 3503
-            </a>
-            <a href="mailto:ventas@polimer-etp.cl">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                ventas@polimer-etp.cl
-            </a>
-        </div>
-        <div class="top-bar-right">
-            <span>Lun – Vie: 09:00 – 18:00 hrs · Santa Ester 566, San Miguel</span>
-        </div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <a href="tel:+56944843503">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.23 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          +56 9 4484 3503
+        </a>
+        <a href="mailto:ventas@polimer-etp.cl">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          ventas@polimer-etp.cl
+        </a>
+      </div>
+      <div class="topbar-right">Pedido mínimo: 300 kg &nbsp;·&nbsp; Entrega a planta en todo Chile</div>
     </div>
+  </div>
 </div>
 
 <!-- HEADER -->
-<header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-        <a href="#inicio" class="site-logo">
-            <img src="img/logo.png" alt="ETP Polimer Ltda">
-        </a>
-        <nav class="main-nav">
-            <a href="#inicio" class="nav-link active">Inicio</a>
-            <a href="#industrias" class="nav-link">Industrias</a>
-            <a href="#productos" class="nav-link">Productos</a>
-            <a href="#nosotros" class="nav-link">Nosotros</a>
-            <a href="#contacto" class="nav-link">Cotizar</a>
-        </nav>
-        <a href="https://wa.me/56944843503" target="_blank" class="btn btn-primary nav-cta">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            Cotizar ahora
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Menú">
-            <span></span><span></span><span></span>
-        </button>
+<header id="siteHeader" class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="img/logo.png" alt="ETP Polimer">
+      </a>
+      <nav class="main-nav">
+        <div class="nav-item">
+          <span class="nav-link" tabindex="0">
+            Productos
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+          <div class="dropdown">
+            <a href="productos.html?cat=bolsas">
+              <div class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg></div>
+              <div><strong>Bolsas Industriales</strong><span>Hielo, basura, wicketer, bins</span></div>
+            </a>
+            <a href="productos.html?cat=films">
+              <div class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+              <div><strong>Films</strong><span>Stretch, barrera, laminados</span></div>
+            </a>
+            <a href="productos.html?cat=formatos">
+              <div class="dropdown-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+              <div><strong>Formatos Especiales</strong><span>Doypack, vacío, cubre pallet</span></div>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="productos.html">
+              <div class="dropdown-icon" style="background:var(--blue)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg></div>
+              <div><strong>Ver catálogo completo</strong></div>
+            </a>
+          </div>
+        </div>
+        <a href="nosotros.html" class="nav-link">Nosotros</a>
+        <a href="cotizar.html" class="btn btn-primary btn-sm header-cta">Cotizar ahora →</a>
+      </nav>
+      <button id="hamburger" class="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
 </header>
 
 <!-- MOBILE NAV -->
-<div class="mobile-nav" id="mobileNav">
-    <div class="mobile-nav-header">
-        <img src="img/logo.png" alt="ETP Polimer" style="height:40px;width:auto;">
-        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar">✕</button>
-    </div>
-    <div class="mobile-nav-links">
-        <a href="#inicio" class="mobile-nav-link">Inicio</a>
-        <a href="#industrias" class="mobile-nav-link">Industrias</a>
-        <a href="#productos" class="mobile-nav-link">Productos</a>
-        <a href="#nosotros" class="mobile-nav-link">Nosotros</a>
-        <a href="#contacto" class="mobile-nav-link">Cotizar</a>
-    </div>
-    <div class="mobile-nav-footer">
-        <a href="https://wa.me/56944843503" target="_blank" class="btn btn-primary btn-block">Cotizar por WhatsApp</a>
-    </div>
-</div>
-<div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+<div id="mobileNavOverlay" class="mobile-nav-overlay"></div>
+<nav id="mobileNav" class="mobile-nav">
+  <div class="mobile-nav-header">
+    <img src="img/logo.png" alt="ETP Polimer" style="height:36px;">
+    <button id="mobileNavClose" class="mobile-nav-close" aria-label="Cerrar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav-body">
+    <span class="mobile-nav-label">Productos</span>
+    <a href="productos.html?cat=bolsas" class="mobile-nav-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/></svg>
+      Bolsas Industriales
+    </a>
+    <a href="productos.html?cat=films" class="mobile-nav-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>
+      Films
+    </a>
+    <a href="productos.html?cat=formatos" class="mobile-nav-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      Formatos Especiales
+    </a>
+    <a href="productos.html" class="mobile-nav-link" style="font-weight:600;color:var(--blue)">Ver catálogo completo →</a>
+    <br>
+    <span class="mobile-nav-label">Empresa</span>
+    <a href="nosotros.html" class="mobile-nav-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Nosotros
+    </a>
+  </div>
+  <div class="mobile-nav-footer">
+    <a href="cotizar.html" class="btn btn-primary btn-block">Cotizar ahora →</a>
+  </div>
+</nav>
 
 <!-- HERO -->
-<section class="hero" id="inicio">
-    <div class="container hero-grid">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                Proveedor industrial · Fabricación directa en Chile
-            </div>
-            <h1>Empaques flexibles para empresas que compran en <span>volumen</span></h1>
-            <p>Fabricamos directamente para retail, agroindustria, alimentos y farmacia. Precio por tonelada, personalización de marca y entregas programadas en todo Chile.</p>
-            <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:6px;padding:0.5rem 1rem;margin-bottom:1.5rem;font-size:0.9rem;">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                Atendemos empresas con pedidos desde 50.000 unidades/mes
-            </div>
-            <div class="hero-actions">
-                <a href="#contacto" class="btn btn-white btn-lg">Solicitar cotización corporativa</a>
-                <a href="#como-funciona" class="btn btn-outline-white btn-lg">¿Cómo funciona?</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-num" data-count="25" data-suffix="+">0</span>
-                    <span class="hero-stat-lbl">Años de experiencia</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num" data-count="500" data-suffix="+">0</span>
-                    <span class="hero-stat-lbl">Empresas atendidas</span>
-                </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">24h</span>
-                    <span class="hero-stat-lbl">Respuesta cotización</span>
-                </div>
-            </div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tags">
+          <span class="hero-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Fabricación propia · Santiago
+          </span>
+          <span class="hero-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Despacho a planta en todo Chile
+          </span>
+          <span class="hero-tag green">Mínimo 300 kg</span>
         </div>
-        <div class="hero-image-col">
-            <img src="img/hero-planta.jpg" alt="Planta de producción ETP Polimer" class="hero-img">
+        <h1>Empaques flexibles para empresas que <span>producen a escala</span></h1>
+        <p>Fabricamos bolsas, films y formatos de polietileno para retail, agroindustria y alimentos. Producción propia, sin intermediarios, entrega directa a tu planta.</p>
+        <div class="hero-actions">
+          <a href="cotizar.html" class="btn btn-primary btn-lg">Cotizar ahora →</a>
+          <a href="productos.html" class="btn btn-outline-white btn-lg">Ver catálogo</a>
         </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num" data-count="20" data-suffix="+">0</span>
+            <span class="hero-stat-lbl">Años fabricando</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="150" data-suffix="+">0</span>
+            <span class="hero-stat-lbl">Clientes activos</span>
+          </div>
+          <div>
+            <span class="hero-stat-num" data-count="13" data-suffix="">0</span>
+            <span class="hero-stat-lbl">Líneas de producto</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image-col reveal">
+        <img src="img/hero-planta.jpg" alt="Planta de producción ETP Polimer" class="hero-img">
+        <div class="hero-badge-float">
+          <div class="hbf-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="hbf-text">
+            <strong>100% fabricación propia</strong>
+            <span>San Miguel, Santiago</span>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
-<!-- INDUSTRIAS B2B -->
-<section class="section-pad" id="industrias">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Para quién fabricamos</span>
-            <h2>Industrias que atendemos con volumen</h2>
-            <p>Trabajamos con empresas que necesitan abastecimiento continuo, precios por tonelada y un proveedor confiable a largo plazo.</p>
-        </div>
-        <div class="cat-grid cat-grid-4">
-            <div class="cat-card reveal" style="cursor:default;">
-                <div class="cat-card-body" style="padding:2rem 1.5rem;">
-                    <span class="badge">Retail</span>
-                    <h3>Supermercados y Retail</h3>
-                    <p>Bolsas de alta rotación con impresión de marca. Entregas programadas, sin quiebres de stock.</p>
-                </div>
-            </div>
-            <div class="cat-card reveal reveal-delay-1" style="cursor:default;">
-                <div class="cat-card-body" style="padding:2rem 1.5rem;">
-                    <span class="badge">Agroindustria</span>
-                    <h3>Agroindustria y Exportación</h3>
-                    <p>Empaques técnicos con resistencia UV, sellado hermético y cumplimiento de normativas de exportación.</p>
-                </div>
-            </div>
-            <div class="cat-card reveal reveal-delay-2" style="cursor:default;">
-                <div class="cat-card-body" style="padding:2rem 1.5rem;">
-                    <span class="badge">Alimentos</span>
-                    <h3>Alimentos y Bebidas</h3>
-                    <p>Envases con certificación alimentaria. Producción en volumen con trazabilidad y normativa sanitaria.</p>
-                </div>
-            </div>
-            <div class="cat-card reveal reveal-delay-3" style="cursor:default;">
-                <div class="cat-card-body" style="padding:2rem 1.5rem;">
-                    <span class="badge">Farmacia</span>
-                    <h3>Farmacia y Salud</h3>
-                    <p>Alta barrera, sellado de precisión y materiales certificados para productos sensibles.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRODUCTOS -->
-<section class="section-pad bg-gray" id="productos">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Nuestros Productos</span>
-            <h2>Soluciones de packaging para cada industria</h2>
-            <p>Contamos con una línea completa de envases y bolsas plásticas fabricados con los más altos estándares de calidad.</p>
-        </div>
-        <div class="cat-grid cat-grid-4">
-
-            <a href="producto.html?id=bolsas-hielo" class="cat-card reveal">
-                <div class="cat-card-img"><img src="img/prod-hielo.jpg" alt="Bolsas para Hielo"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Bolsas Industriales</span>
-                    <h3>Bolsas para Hielo</h3>
-                    <p>PEBD resistente a congelación, con impresión personalizada a full color.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=bolsas-wicketer" class="cat-card reveal reveal-delay-1">
-                <div class="cat-card-img"><img src="img/prod-wicketer.jpg" alt="Bolsas Wicketer"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Envasado</span>
-                    <h3>Bolsas Wicketer</h3>
-                    <p>Sistema en alambre metálico para dispensación automática en líneas de envasado.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=fundas-cubre-pallet" class="cat-card reveal reveal-delay-2">
-                <div class="cat-card-img"><img src="img/prod-cubre-pallet.jpg" alt="Fundas Cubre Pallet"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Logística</span>
-                    <h3>Fundas Cubre Pallet</h3>
-                    <p>Protección total contra polvo y humedad. Opciones estándar, termocontraíble y stretch.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=bolsas-basura" class="cat-card reveal reveal-delay-3">
-                <div class="cat-card-img"><img src="img/prod-basura.jpg" alt="Bolsas de Basura"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Bolsas Industriales</span>
-                    <h3>Bolsas de Basura</h3>
-                    <p>20L a 240L. Uso domiciliario, comercial e industrial con opciones de cierre y colores.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=bolsas-rollo-prepicadas" class="cat-card reveal">
-                <div class="cat-card-img cat-card-img-empty">
-                    <svg width="40" height="40" fill="none" stroke="var(--border)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                </div>
-                <div class="cat-card-body">
-                    <span class="badge">Envasado</span>
-                    <h3>Bolsas en Rollo Prepicadas</h3>
-                    <p>Formato continuo con prepicado nítido. Optimizan almacenamiento y dispensación.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=bolsas-contenedoras" class="cat-card reveal reveal-delay-1">
-                <div class="cat-card-img"><img src="img/prod-contenedoras.jpg" alt="Bolsas Contenedoras"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Bolsas Industriales</span>
-                    <h3>Bolsas Contenedoras Alta Resistencia</h3>
-                    <p>Para almacenamiento y transporte de productos a granel y alto volumen.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=bolsas-bins" class="cat-card reveal reveal-delay-2">
-                <div class="cat-card-img"><img src="img/prod-bins.jpg" alt="Bolsas Bins"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Bolsas Industriales</span>
-                    <h3>Bolsas Bins Coextruido</h3>
-                    <p>Polietileno coextruido multicapa para contacto alimentario en bins y maxisacos.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=envases-especiales" class="cat-card reveal reveal-delay-3">
-                <div class="cat-card-img cat-card-img-empty">
-                    <svg width="40" height="40" fill="none" stroke="var(--border)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                </div>
-                <div class="cat-card-body">
-                    <span class="badge">Personalizado</span>
-                    <h3>Envases Especiales a la Medida</h3>
-                    <p>Soluciones avanzadas con barreras específicas y formatos únicos para cada necesidad.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=puche-doypack" class="cat-card reveal">
-                <div class="cat-card-img cat-card-img-empty">
-                    <svg width="40" height="40" fill="none" stroke="var(--border)" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                </div>
-                <div class="cat-card-body">
-                    <span class="badge">Envases Flexibles</span>
-                    <h3>Puche Doypack</h3>
-                    <p>Bolsas stand-up que se mantienen de pie. Zipper, válvula y acabados personalizados.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=pouche-vacio" class="cat-card reveal reveal-delay-1">
-                <div class="cat-card-img"><img src="img/prod-vacio.jpg" alt="Pouche para Vacío"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Envases Flexibles</span>
-                    <h3>Pouche para Vacío</h3>
-                    <p>Alta barrera con Nylon/PA. Con o sin zipper. Impresión HD disponible.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=films-laminados" class="cat-card reveal reveal-delay-2">
-                <div class="cat-card-img"><img src="img/prod-films-laminados.jpg" alt="Films Laminados"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Films Especiales</span>
-                    <h3>Films Laminados</h3>
-                    <p>Combinación de PA, PET y BOPP en acabados brillante y mate para alto rendimiento.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=films-barrera" class="cat-card reveal reveal-delay-3">
-                <div class="cat-card-img"><img src="img/prod-films-barrera.jpg" alt="Films Barrera"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Films Especiales</span>
-                    <h3>Films Barrera</h3>
-                    <p>7 capas coextruidas con PA y EVOH para protección máxima contra oxígeno y gases.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-            <a href="producto.html?id=film-stretch" class="cat-card reveal">
-                <div class="cat-card-img"><img src="img/prod-film-stretch.jpg" alt="Film Stretch"></div>
-                <div class="cat-card-body">
-                    <span class="badge">Films Especiales</span>
-                    <h3>Film Stretch</h3>
-                    <p>Polietileno estirable de alta calidad para estabilización de cargas paletizadas.</p>
-                    <div class="cat-card-link">Ver detalles <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-                </div>
-            </a>
-
-        </div>
-    </div>
+  </div>
 </section>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-    <div class="container stats-grid">
-        <div class="stat-item reveal">
-            <span class="stat-item-num" data-count="25" data-suffix="+">0</span>
-            <span class="stat-item-lbl">Años de trayectoria</span>
-        </div>
-        <div class="stat-item reveal reveal-delay-1">
-            <span class="stat-item-num" data-count="500" data-suffix="+">0</span>
-            <span class="stat-item-lbl">Clientes satisfechos</span>
-        </div>
-        <div class="stat-item reveal reveal-delay-2">
-            <span class="stat-item-num" data-count="100" data-suffix="%">0</span>
-            <span class="stat-item-lbl">Calidad garantizada</span>
-        </div>
-        <div class="stat-item reveal reveal-delay-3">
-            <span class="stat-item-num">+25</span>
-            <span class="stat-item-lbl">Años en el mercado</span>
-        </div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-count="20" data-suffix="+">20+</span>
+        <span class="stat-lbl">Años en el mercado</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="6" data-suffix="">6</span>
+        <span class="stat-lbl">Líneas de producción</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="150" data-suffix="+">150+</span>
+        <span class="stat-lbl">Empresas atendidas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-count="48" data-suffix="h">48h</span>
+        <span class="stat-lbl">Cotización en horas</span>
+      </div>
     </div>
+  </div>
 </div>
 
-<!-- PELLET CANVAS -->
-<section class="pellet-section">
-    <div class="pellet-inner">
-        <canvas id="pelletCanvas" class="pellet-canvas"></canvas>
-        <div class="pellet-sidebar">
-            <div class="pellet-stat" data-phase="0">
-                <span class="pstat-num">25+</span>
-                <span class="pstat-label">Años de experiencia</span>
-            </div>
-            <div class="pellet-stat" data-phase="1">
-                <span class="pstat-num">500+</span>
-                <span class="pstat-label">Clientes satisfechos</span>
-            </div>
-            <div class="pellet-stat" data-phase="2">
-                <span class="pstat-num">ETP</span>
-                <span class="pstat-label">Empresa familiar chilena</span>
-            </div>
-            <div class="pellet-stat" data-phase="3">
-                <span class="pstat-num">100%</span>
-                <span class="pstat-label">Calidad garantizada</span>
-            </div>
-            <p class="pellet-caption">Cada punto es un gránulo de polietileno — la materia prima de nuestros envases.</p>
-        </div>
+<!-- INDUSTRIAS -->
+<section class="section-pad bg-gray" id="industrias">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Industrias</span>
+      <h2>Soluciones por sector</h2>
+      <p>Trabajamos con empresas que manejan alto volumen y requieren empaques consistentes, trazables y a medida de sus procesos productivos.</p>
     </div>
+    <div class="industries-grid">
+      <a href="productos.html?ind=retail" class="industry-card reveal reveal-delay-1">
+        <div class="industry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        </div>
+        <h3>Retail y Supermercados</h3>
+        <p>Bolsas marca propia y biodegradables para punto de venta masivo.</p>
+      </a>
+      <a href="productos.html?ind=agroindustria" class="industry-card reveal reveal-delay-2">
+        <div class="industry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V12m0 0C12 7 7 5 2 6c0 5 3 9 10 6zm0 0c0-5 5-7 10-6-1 5-4 9-10 6z"/></svg>
+        </div>
+        <h3>Agroindustria</h3>
+        <p>Films stretch y bolsas de calibre alto para cosecha y almacenaje.</p>
+      </a>
+      <a href="productos.html?ind=alimentos" class="industry-card reveal reveal-delay-3">
+        <div class="industry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <h3>Alimentos y Bebidas</h3>
+        <p>Doypack, wicketer y films barrera para alimentos certificados.</p>
+      </a>
+      <a href="productos.html?ind=farmacia" class="industry-card reveal reveal-delay-4">
+        <div class="industry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12h6M12 9v6"/></svg>
+        </div>
+        <h3>Farmacia e Higiene</h3>
+        <p>Bolsas al vacío, films transparentes y empaques de alta barrera.</p>
+      </a>
+      <a href="productos.html?ind=logistica" class="industry-card reveal reveal-delay-4">
+        <div class="industry-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Logística y Distribución</h3>
+        <p>Cubre pallets, films stretch y contenedoras para bodegas.</p>
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- POR QUÉ ELEGIRNOS -->
-<section class="section-pad value-prop-section">
-    <div class="container">
-        <div class="vp-layout">
-
-            <div class="vp-left reveal">
-                <span class="section-label">Nuestra Ventaja</span>
-                <h2>¿Por qué elegir ETP Polimer?</h2>
-                <div class="divider"></div>
-                <p>Somos fabricantes directos. Sin intermediarios, sin sorpresas. Desde la materia prima hasta el producto terminado, todo ocurre en nuestra planta en San Miguel.</p>
-                <div class="vp-img-wrap">
-                    <img src="img/fabrica-maquinas.jpg" alt="Maquinaria ETP Polimer" class="vp-img">
-                </div>
-            </div>
-
-            <div class="vp-right">
-                <div class="advantage-list">
-                    <div class="advantage-item reveal">
-                        <div class="adv-icon adv-icon-1">
-                            <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                        </div>
-                        <div class="adv-content">
-                            <h4>Fabricante directo — sin intermediarios</h4>
-                            <p>Producimos en nuestra planta en San Miguel. Precios de fábrica, tiempos de entrega menores y control total de calidad.</p>
-                        </div>
-                        <div class="adv-check">✓</div>
-                    </div>
-                    <div class="advantage-item reveal reveal-delay-1">
-                        <div class="adv-icon adv-icon-2">
-                            <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        </div>
-                        <div class="adv-content">
-                            <h4>+25 años de experiencia en el rubro</h4>
-                            <p>Empresa familiar con una trayectoria sólida. Conocemos las necesidades de cada industria y fabricamos a la medida exacta.</p>
-                        </div>
-                        <div class="adv-check">✓</div>
-                    </div>
-                    <div class="advantage-item reveal reveal-delay-2">
-                        <div class="adv-icon adv-icon-3">
-                            <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-                        </div>
-                        <div class="adv-content">
-                            <h4>Impresión personalizada en tus bolsas</h4>
-                            <p>Tu marca en cada envase. Producción con tu diseño, colores corporativos y sin mínimos exagerados.</p>
-                        </div>
-                        <div class="adv-check">✓</div>
-                    </div>
-                    <div class="advantage-item reveal reveal-delay-3">
-                        <div class="adv-icon adv-icon-4">
-                            <svg width="22" height="22" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                        </div>
-                        <div class="adv-content">
-                            <h4>Control de calidad riguroso en cada etapa</h4>
-                            <p>Verificamos cada lote desde la extrusión hasta el despacho. Sin comprometer la calidad que tus clientes esperan.</p>
-                        </div>
-                        <div class="adv-check">✓</div>
-                    </div>
-                </div>
-
-                <div class="vp-comparison reveal">
-                    <div class="compare-col compare-them">
-                        <div class="compare-header">Distribuidor / Revendedor</div>
-                        <div class="compare-row"><span class="cx">✗</span> Precio con margen de reventa</div>
-                        <div class="compare-row"><span class="cx">✗</span> Stock limitado, sin personalización</div>
-                        <div class="compare-row"><span class="cx">✗</span> Sin flexibilidad en volumen</div>
-                        <div class="compare-row"><span class="cx">✗</span> Tiempos de entrega variables</div>
-                        <div class="compare-row"><span class="cx">✗</span> Sin soporte técnico directo</div>
-                    </div>
-                    <div class="compare-col compare-us">
-                        <div class="compare-header">ETP Polimer — Fabricante</div>
-                        <div class="compare-row"><span class="ck">✓</span> Precio de fábrica por tonelada</div>
-                        <div class="compare-row"><span class="ck">✓</span> Tu marca en cada empaque</div>
-                        <div class="compare-row"><span class="ck">✓</span> Pedidos desde 50.000 unidades</div>
-                        <div class="compare-row"><span class="ck">✓</span> Entrega coordinada con tu calendario</div>
-                        <div class="compare-row"><span class="ck">✓</span> Ejecutivo de cuenta dedicado</div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<!-- PRODUCTOS DESTACADOS -->
+<section class="section-pad" id="productos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Catálogo</span>
+      <h2>Nuestros productos principales</h2>
+      <p>Producción propia en formatos estándar y completamente personalizados según las dimensiones, micraje e impresión que tu empresa requiere.</p>
     </div>
+    <div class="products-grid">
+      <a href="producto.html?id=bolsas-hielo" class="product-card reveal reveal-delay-1">
+        <div class="product-card-img">
+          <img src="img/prod-hielo.jpg" alt="Bolsas para Hielo">
+        </div>
+        <div class="product-card-body">
+          <span class="product-badge">Bolsas</span>
+          <h3>Bolsas para Hielo</h3>
+          <p>Resistentes a bajas temperaturas. PEBD para congelación sin perder flexibilidad. Con impresión a full color.</p>
+          <span class="product-card-link">Ver especificaciones →</span>
+        </div>
+      </a>
+      <a href="producto.html?id=bolsas-wicketer" class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <img src="img/prod-wicketer.jpg" alt="Bolsas Wicketer">
+        </div>
+        <div class="product-card-body">
+          <span class="product-badge">Bolsas</span>
+          <h3>Bolsas Wicketer</h3>
+          <p>Para líneas de envasado automático y semi-automático. Ampliamente usadas en panaderías y avícolas.</p>
+          <span class="product-card-link">Ver especificaciones →</span>
+        </div>
+      </a>
+      <a href="producto.html?id=film-stretch" class="product-card reveal reveal-delay-3">
+        <div class="product-card-img">
+          <img src="img/prod-film-stretch.jpg" alt="Film Stretch">
+        </div>
+        <div class="product-card-body">
+          <span class="product-badge">Films</span>
+          <h3>Film Stretch</h3>
+          <p>Alto rendimiento para paletización segura. Minimiza daños en transporte y almacenaje industrial.</p>
+          <span class="product-card-link">Ver especificaciones →</span>
+        </div>
+      </a>
+      <a href="producto.html?id=puche-doypack" class="product-card reveal reveal-delay-4">
+        <div class="product-card-img" style="background:var(--gray-100);display:flex;align-items:center;justify-content:center;min-height:200px;">
+          <img src="img/bolsa-puuch-0_edited.jpg" alt="Doypack" style="object-fit:cover;width:100%;height:100%;">
+        </div>
+        <div class="product-card-body">
+          <span class="product-badge">Formatos Especiales</span>
+          <h3>Doypack y Vacío</h3>
+          <p>Pouche Doypack con o sin zipper y bolsas al vacío para prolongar vida útil de productos perecederos.</p>
+          <span class="product-card-link">Ver especificaciones →</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="productos.html" class="btn btn-outline btn-lg">Ver catálogo completo →</a>
+    </div>
+  </div>
 </section>
 
-<!-- QUIÉNES SOMOS -->
-<section class="section-pad bg-gray" id="nosotros">
-    <div class="container about-grid">
-        <div class="about-img reveal">
-            <img src="img/sobre-nosotros.jpg" alt="Bodega ETP Polimer" style="width:100%;height:460px;object-fit:cover;border-radius:6px;display:block;">
-        </div>
-        <div class="about-text reveal reveal-delay-1">
-            <span class="section-label">Quiénes Somos</span>
-            <h2>Empresa familiar con historia y compromiso</h2>
-            <div class="divider"></div>
-            <p>ETP Polimer Ltda. es una empresa familiar chilena especializada en la producción y comercialización de envases flexibles. Contamos con maquinaria avanzada y un equipo comprometido con la calidad en cada etapa del proceso.</p>
-            <p>Atendemos a clientes de diversas industrias en todo Chile, desde la industria alimentaria hasta logística y transporte, con soluciones confiables y completamente personalizadas.</p>
-            <ul class="spec-list">
-                <li><svg class="spec-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Más de 25 años de experiencia en envases flexibles</li>
-                <li><svg class="spec-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Planta propia en Santa Ester 566, San Miguel</li>
-                <li><svg class="spec-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Soluciones 100% a medida para cada cliente</li>
-                <li><svg class="spec-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Atención directa con el fabricante, sin intermediarios</li>
-            </ul>
-            <a href="#contacto" class="btn btn-primary mt-3">Contáctanos</a>
-        </div>
+<!-- POR QUÉ ETP -->
+<section class="section-pad bg-gray">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Por qué ETP Polimer</span>
+      <h2>Lo que distingue nuestra producción</h2>
+      <p>Más de 20 años fabricando empaques para empresas chilenas con estándares industriales y venta directa de fábrica.</p>
     </div>
+    <div class="features-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Fabricación directa sin intermediarios</h3>
+        <p>Planta propia en Santiago. No tercerizamos producción: controlamos calidad, tiempos y costos en cada pedido desde el inicio.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Calidad constante en grandes volúmenes</h3>
+        <p>Cada pedido se produce bajo las mismas especificaciones técnicas: micraje, dimensiones y propiedades de barrera verificadas en línea.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <h3>Entrega directa a tu planta</h3>
+        <p>Despacho en todo Chile. Coordinamos con tu equipo de bodega para minimizar interrupciones en tu cadena de abastecimiento.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>Personalización total de diseño</h3>
+        <p>Impresión flexográfica de hasta 8 colores con tu marca. Ideal para empresas con producto propio que requieren packaging diferenciador.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Respuesta técnica en 48 horas</h3>
+        <p>Cotizaciones detalladas en máximo 48 horas hábiles. Nuestro equipo comercial te acompaña desde la primera consulta hasta la entrega.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>Precio directo de fábrica</h3>
+        <p>Al trabajar directamente con la fábrica, eliminás márgenes de distribución. El ahorro se traduce en mejor precio por kilo a largo plazo.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
-<section class="section-pad" id="como-funciona">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Proceso de cotización</span>
-            <h2>Así funciona trabajar con nosotros</h2>
-            <p>Sin intermediarios, sin demoras. Directo del fabricante a tu empresa.</p>
-        </div>
-        <div class="process-grid">
-            <div class="process-item reveal">
-                <div class="process-num">01</div>
-                <div class="process-icon">
-                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                </div>
-                <h3>Completás el formulario</h3>
-                <p>Nos indicás tu industria, volumen mensual y tipo de empaque. Toma menos de 2 minutos.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-1">
-                <div class="process-num">02</div>
-                <div class="process-icon">
-                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <h3>Te llamamos en menos de 24h</h3>
-                <p>Un ejecutivo de ventas te contacta para entender tu requerimiento en detalle y resolver dudas.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-2">
-                <div class="process-num">03</div>
-                <div class="process-icon">
-                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                </div>
-                <h3>Recibís propuesta con precio por volumen</h3>
-                <p>Cotización formal con precio por tonelada, plazos de entrega y condiciones comerciales.</p>
-            </div>
-            <div class="process-item reveal reveal-delay-3">
-                <div class="process-num">04</div>
-                <div class="process-icon">
-                    <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-                </div>
-                <h3>Producción y entrega programada</h3>
-                <p>Fabricamos a tu medida y coordinamos despacho a Santiago o regiones según tu calendario.</p>
-            </div>
-        </div>
+<!-- PROCESO -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Proceso</span>
+      <h2>De la cotización a la entrega</h2>
+      <p>Un proceso claro y sin sorpresas. Sabés en qué etapa está tu pedido en todo momento.</p>
     </div>
-</section>
-
-<!-- CONTACTO -->
-<section class="section-pad bg-gray" id="contacto">
-    <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Cotización Corporativa</span>
-            <h2>¿Tu empresa necesita empaques en volumen?</h2>
-            <p>Completa el formulario y te enviamos una propuesta con precio por tonelada, tiempos de entrega y condiciones comerciales en menos de 24 horas.</p>
-        </div>
-        <div class="contact-grid">
-            <div class="contact-methods reveal">
-                <a href="https://wa.me/56944843503" target="_blank" class="c-method c-method-wa">
-                    <div class="cm-icon cm-icon-wa">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                    </div>
-                    <div>
-                        <h4>WhatsApp Ventas</h4>
-                        <span>+569 4484 3503</span>
-                    </div>
-                </a>
-                <a href="tel:+56933643058" class="c-method">
-                    <div class="cm-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    </div>
-                    <div>
-                        <h4>Teléfono</h4>
-                        <span>+569 3364 3058</span>
-                    </div>
-                </a>
-                <a href="mailto:ventas@polimer-etp.cl" class="c-method">
-                    <div class="cm-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div>
-                        <h4>Email corporativo</h4>
-                        <span>ventas@polimer-etp.cl</span>
-                    </div>
-                </a>
-                <div class="c-method">
-                    <div class="cm-icon">
-                        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    </div>
-                    <div>
-                        <h4>Dirección</h4>
-                        <span>Santa Ester 566, San Miguel, Santiago</span>
-                    </div>
-                </div>
-                <div class="c-horario">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    <span>Lunes a Viernes: 09:00 – 18:00 hrs.</span>
-                </div>
-            </div>
-
-            <form class="contact-form reveal reveal-delay-1" id="contactForm" action="https://formsubmit.co/jpbayas@jpbmarketing.cl" method="POST" onsubmit="gtag_report_conversion()">
-                <input type="hidden" name="_next" value="gracias.html">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_subject" value="Nueva cotización corporativa desde polimer-etp.cl">
-                <h3>Solicitar cotización corporativa</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="empresa">Nombre de la empresa *</label>
-                        <input type="text" id="empresa" name="empresa" required placeholder="Razón social o nombre comercial">
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo">Tu cargo en la empresa *</label>
-                        <input type="text" id="cargo" name="cargo" required placeholder="Ej: Jefe de Compras">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="email">Email corporativo *</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@empresa.cl">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Teléfono</label>
-                        <input type="tel" id="phone" name="phone" placeholder="+56 9 ...">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="industria">Industria *</label>
-                        <select id="industria" name="industria" required>
-                            <option value="">Selecciona tu industria...</option>
-                            <option>Retail / Supermercados</option>
-                            <option>Alimentos y Bebidas</option>
-                            <option>Agroindustria / Exportación</option>
-                            <option>Farmacia / Salud</option>
-                            <option>Construcción / Industria</option>
-                            <option>Logística / Distribución</option>
-                            <option>Otra</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="volumen">Unidades mensuales aproximadas *</label>
-                        <select id="volumen" name="volumen" required>
-                            <option value="">Selecciona un rango...</option>
-                            <option>Menos de 10.000 unidades</option>
-                            <option>10.000 – 50.000 unidades</option>
-                            <option>50.000 – 200.000 unidades</option>
-                            <option>200.000 – 500.000 unidades</option>
-                            <option>Más de 500.000 unidades</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="product">Producto de interés</label>
-                    <select id="product" name="product">
-                        <option value="">Selecciona un producto...</option>
-                        <option>Bolsas para Hielo</option>
-                        <option>Fundas Cubre Pallet</option>
-                        <option>Bolsas de Basura Industrial</option>
-                        <option>Bolsas Wicketer</option>
-                        <option>Films Especiales / Barrera</option>
-                        <option>Formatos Especiales / Doypack</option>
-                        <option>Otro / No sé aún</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Detalle tu requerimiento</label>
-                    <textarea id="message" name="message" rows="3" placeholder="Medidas, especificaciones técnicas, frecuencia de pedido, etc."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block btn-lg">Enviar cotización corporativa</button>
-                <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.75rem;text-align:center;">Te respondemos en menos de 24 horas hábiles.</p>
-            </form>
-        </div>
+    <div class="process-steps">
+      <div class="process-step reveal reveal-delay-1">
+        <div class="step-num">1</div>
+        <h3>Cotizás online</h3>
+        <p>Completás el formulario con producto, medidas, cantidad y datos de empresa. Sin compromiso.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <h3>Validamos specs</h3>
+        <p>Nuestro equipo técnico revisa y confirma factibilidad en 48 horas hábiles con precio por kilo.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <h3>Producimos</h3>
+        <p>Iniciamos fabricación una vez aprobada la cotización. Tiempo estimado según volumen y complejidad.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-4">
+        <div class="step-num">4</div>
+        <h3>Entrega en planta</h3>
+        <p>Coordinamos despacho directo a tu bodega con guía de despacho y factura electrónica.</p>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- CTA BANNER -->
 <section class="cta-banner">
-    <div class="container">
-        <h2 class="reveal">¿Tu empresa compra empaques todos los meses?</h2>
-        <p class="reveal">Podemos ser tu proveedor directo. Sin intermediarios, con precio de fábrica y entregas programadas.</p>
-        <div class="cta-actions reveal">
-            <a href="#contacto" class="btn btn-white btn-lg">Solicitar cotización corporativa</a>
-            <a href="https://wa.me/56944843503" target="_blank" class="btn btn-outline-white btn-lg">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                WhatsApp
-            </a>
-        </div>
+  <div class="container">
+    <h2 class="reveal">¿Listo para optimizar tu empaque?</h2>
+    <p class="reveal">Cotizá ahora y recibí respuesta técnica en 48 horas. Sin intermediarios, directo desde fábrica.</p>
+    <div class="cta-actions reveal">
+      <a href="cotizar.html" class="btn btn-white btn-lg">Solicitar cotización →</a>
+      <a href="https://wa.me/56944843503?text=Hola%2C%20quiero%20cotizar%20empaques%20para%20mi%20empresa." class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribir por WhatsApp
+      </a>
     </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <div class="container footer-inner">
-        <div class="footer-brand">
-            <img src="img/logo.png" alt="ETP Polimer Ltda" style="height:50px;width:auto;filter:brightness(0) invert(1);margin-bottom:1rem;">
-            <p>25 años fabricando envases flexibles y bolsas plásticas de calidad en Chile.</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo.png" alt="ETP Polimer" class="footer-logo">
+        <p>Fabricantes de empaques flexibles de polietileno en Chile. Producción propia para empresas que exigen calidad y volumen.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <a href="productos.html?cat=bolsas">Bolsas industriales</a>
+        <a href="productos.html?cat=films">Films stretch y barrera</a>
+        <a href="productos.html?cat=formatos">Formatos especiales</a>
+        <a href="productos.html">Ver catálogo completo</a>
+      </div>
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="nosotros.html">Quiénes somos</a>
+        <a href="nosotros.html#planta">Nuestra planta</a>
+        <a href="cotizar.html">Cotizar</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.23 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          <a href="tel:+56944843503">+56 9 4484 3503</a>
         </div>
-        <div class="footer-links">
-            <h4>Navegación</h4>
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Productos</a>
-            <a href="#nosotros">Quiénes Somos</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#contacto">Contacto</a>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          <a href="mailto:ventas@polimer-etp.cl">ventas@polimer-etp.cl</a>
         </div>
-        <div class="footer-links">
-            <h4>Productos</h4>
-            <a href="#productos">Bolsas para Hielo</a>
-            <a href="#productos">Fundas Cubre Pallet</a>
-            <a href="#productos">Films Especiales</a>
-            <a href="#productos">Formatos Especiales</a>
+        <div class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Santa Ester 566, San Miguel · Santiago</span>
         </div>
-        <div class="footer-contact">
-            <h4>Contacto</h4>
-            <p><a href="tel:+56944843503">+569 4484 3503</a></p>
-            <p><a href="mailto:ventas@polimer-etp.cl">ventas@polimer-etp.cl</a></p>
-            <p>Santa Ester 566<br>San Miguel, Santiago</p>
-            <a href="https://wa.me/56944843503" target="_blank" class="btn btn-primary btn-sm mt-2">WhatsApp →</a>
-        </div>
+      </div>
     </div>
     <div class="footer-bottom">
-        <div class="container">
-            <p>&copy; 2026 ETP Polimer Ltda. Todos los derechos reservados.</p>
-        </div>
+      <span>© 2025 ETP Polimer. Todos los derechos reservados.</span>
+      <span>Diseño por <a href="https://jpbmarketing.cl" style="color:rgba(255,255,255,.45);">JPB Marketing</a></span>
     </div>
+  </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/56944843503" target="_blank" class="wa-float" aria-label="WhatsApp">
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.493.652 4.887 1.887 6.945L2.17 29.83l7.04-1.848A13.918 13.918 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.688c-2.148 0-4.25-.568-6.096-1.642l-.438-.256-4.148 1.09.112-4.045-.28-.445A11.66 11.66 0 0 1 4.25 16C4.25 9.522 9.522 4.25 16 4.25c6.477 0 11.75 5.272 11.75 11.75S22.477 27.688 16 27.688zm6.54-9.3c-.358-.18-2.126-1.05-2.455-1.17-.328-.12-.567-.18-.806.18-.24.36-.926 1.17-1.135 1.41-.21.24-.42.27-.78.09-.358-.18-1.516-.558-2.887-1.78-.136-.12-.236-.252-.423-.393a7.28 7.28 0 0 1-.728-.75c-.25-.292-.516-.628-.686-.88-.17-.253.025-.246.425-.42.18-.18.36-.42.54-.66.18-.24.24-.42.36-.66.12-.24.06-.48-.03-.66-.09-.18-.806-1.94-1.106-2.66-.29-.7-.59-.6-.806-.61-.24-.01-.63.09-.96.45-.33.36-1.255 1.23-1.255 3 0 1.77 1.285 3.48 1.465 3.72.18.24 2.536 3.87 6.146 5.43 3.61 1.56 3.61 1.05 4.27 1.05.65 0 2.125-.87 2.42-1.71.298-.84.298-1.56.21-1.71-.09-.15-.33-.24-.686-.42z"/></svg>
+<!-- WA FLOAT -->
+<a href="https://wa.me/56944843503?text=Hola%2C%20quiero%20cotizar%20empaques%20para%20mi%20empresa." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- PRODUCT MODAL -->
-<div class="modal" id="productModal">
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="modal-box">
-        <button class="modal-close" id="modalClose">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-        <div class="modal-img-wrap">
-            <img id="modalImg" src="" alt="">
-        </div>
-        <div class="modal-content-body">
-            <span class="badge" id="modalBadge"></span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDesc"></p>
-            <p id="modalDetails" class="modal-details-text"></p>
-            <a href="#" id="modalWaBtn" target="_blank" class="btn btn-primary btn-block mt-3">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                Cotizar por WhatsApp
-            </a>
-        </div>
-    </div>
-</div>
-
 <script src="main.js"></script>
-<script>
-// PELLET CANVAS — gránulos de polietileno
-(function () {
-    const canvas = document.getElementById('pelletCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    const PHASES = [
-        { text: '25+',  label: 0, color: '#16a34a', bg: '#dcfce7' },
-        { text: '500+', label: 1, color: '#ffffff',  bg: '#dbeafe' },
-        { text: 'ETP',  label: 2, color: '#16a34a', bg: '#dcfce7' },
-        { text: '100%', label: 3, color: '#86efac',  bg: '#dcfce7' },
-    ];
-    const PHASE_DURATION = 200;
-    let W, H, particles = [], phase = 0, timer = 0, animId, started = false;
-
-    function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-    }
-
-    function sampleText(text, fontSize) {
-        const off = Object.assign(document.createElement('canvas'), { width: W, height: H });
-        const c   = off.getContext('2d');
-        c.fillStyle = 'white';
-        c.font = `900 ${fontSize}px 'Outfit', sans-serif`;
-        c.textAlign = 'center';
-        c.textBaseline = 'middle';
-        c.fillText(text, W / 2, H / 2);
-        const data = c.getImageData(0, 0, W, H).data;
-        const pts = [];
-        const step = Math.max(5, Math.floor(W / 90));
-        for (let y = 0; y < H; y += step)
-            for (let x = 0; x < W; x += step)
-                if (data[(y * W + x) * 4 + 3] > 120) pts.push([x, y]);
-        return pts;
-    }
-
-    class Pellet {
-        constructor() {
-            this.x = Math.random() * W; this.y = Math.random() * H;
-            this.tx = this.x; this.ty = this.y;
-            this.vx = 0; this.vy = 0;
-            this.r = Math.random() * 2 + 1.5;
-            this.hue = Math.random() > 0.6 ? '#16a34a' : '#a8c4e0';
-        }
-        target(tx, ty) { this.tx = tx; this.ty = ty; }
-        scatter() { this.tx = Math.random() * W; this.ty = H + 60 + Math.random() * 80; }
-        update() {
-            const dx = this.tx - this.x, dy = this.ty - this.y;
-            this.vx = this.vx * 0.78 + dx * 0.07;
-            this.vy = this.vy * 0.78 + dy * 0.07;
-            this.x += this.vx; this.y += this.vy;
-        }
-        draw() {
-            ctx.beginPath();
-            ctx.ellipse(this.x, this.y, this.r * 1.4, this.r, 0, 0, Math.PI * 2);
-            ctx.fillStyle = this.hue;
-            ctx.fill();
-        }
-    }
-
-    function applyFormation(phaseIdx) {
-        const ph  = PHASES[phaseIdx % PHASES.length];
-        const fs  = Math.min(W * 0.52, 260);
-        const pts = sampleText(ph.text, fs);
-        if (!pts.length) return;
-        for (let i = pts.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [pts[i], pts[j]] = [pts[j], pts[i]];
-        }
-        while (particles.length < pts.length) particles.push(new Pellet());
-        while (particles.length > pts.length + 20) particles.pop();
-        particles.forEach((p, i) => {
-            if (i < pts.length) {
-                p.hue = (i % 3 === 0) ? ph.color : (i % 3 === 1 ? '#a8c4e0' : ph.color);
-                p.target(pts[i][0], pts[i][1]);
-            } else { p.scatter(); }
-        });
-        document.querySelectorAll('.pellet-stat').forEach((el, i) => {
-            el.classList.toggle('active', i === ph.label);
-        });
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, W, H);
-        ctx.fillStyle = 'rgba(255,255,255,0.03)';
-        const gs = 28;
-        for (let y = 0; y < H; y += gs)
-            for (let x = 0; x < W; x += gs) {
-                ctx.beginPath(); ctx.arc(x, y, 1, 0, Math.PI * 2); ctx.fill();
-            }
-        timer++;
-        if (timer >= PHASE_DURATION) { timer = 0; phase++; applyFormation(phase); }
-        particles.forEach(p => { p.update(); p.draw(); });
-        animId = requestAnimationFrame(animate);
-    }
-
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting && !started) {
-                started = true; resize(); applyFormation(0); animate();
-            } else if (!e.isIntersecting) {
-                cancelAnimationFrame(animId); started = false;
-            }
-        });
-    }, { threshold: 0.15 });
-
-    obs.observe(canvas);
-    window.addEventListener('resize', () => { resize(); applyFormation(phase); });
-})();
-</script>
 </body>
 </html>
