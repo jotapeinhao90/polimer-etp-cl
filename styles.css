@@ -280,6 +280,92 @@ a { text-decoration: none; color: inherit; }
 /* HEADER SCROLLED */
 .site-header.scrolled { box-shadow: 0 4px 20px rgba(0,0,0,.10); }
 
+/* BUTTON SHINE */
+.btn { position: relative; overflow: hidden; isolation: isolate; }
+.btn::after {
+  content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg); transition: left .55s ease; pointer-events: none;
+}
+.btn:hover::after { left: 125%; }
+
+/* PAGE HEADER SHEEN */
+.page-header { position: relative; overflow: hidden; }
+.page-header::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(59,130,246,.14) 45%, rgba(59,130,246,.22) 50%, rgba(59,130,246,.14) 55%, transparent 70%);
+  background-size: 220% 220%; animation: header-sheen 8s ease-in-out infinite; pointer-events: none;
+}
+@keyframes header-sheen { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+/* PRODUCT CARD GLOSS */
+.product-card-img { position: relative; }
+.product-card-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%);
+  transform: translateX(-130%); transition: transform .65s ease; pointer-events: none;
+}
+.product-card:hover .product-card-img::after { transform: translateX(130%); }
+
+/* ═══════════════════════════════════════════════
+   ANIMACIÓN DE PROCESO DE FABRICACIÓN
+   ═══════════════════════════════════════════════ */
+.mp-process { display: flex; align-items: flex-start; }
+.mp-stage { flex: 1; text-align: center; padding: 0 .5rem; min-width: 0; }
+.mp-icon { width: 76px; height: 76px; background: var(--blue-pale); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.1rem; }
+.mp-stage h3 { font-size: .92rem; font-weight: 700; margin-bottom: .35rem; }
+.mp-stage p { font-size: .8rem; color: var(--text-light); line-height: 1.5; }
+.mp-connector { width: 36px; height: 2px; margin-top: 38px; flex-shrink: 0; background-image: repeating-linear-gradient(to right, var(--blue-light) 0 8px, transparent 8px 16px); background-size: 32px 2px; animation: mp-flow .6s linear infinite; }
+@keyframes mp-flow { to { background-position-x: -32px; } }
+
+/* Extrusión: glow pulsante en el dado de salida */
+.mp-icon-extruder .mp-glow { transform-box: fill-box; transform-origin: center; animation: mp-pulse 1.3s ease-in-out infinite; }
+@keyframes mp-pulse { 0%, 100% { opacity: .4; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+
+/* Soplado de burbuja: respiración de la burbuja de film */
+.mp-icon-bubble .mp-balloon { transform-box: fill-box; transform-origin: bottom center; animation: mp-breathe 2.2s ease-in-out infinite; }
+@keyframes mp-breathe { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.05, 1.08); } }
+
+/* Bobinado: rollo girando */
+.mp-icon-winder .mp-spin { transform-box: fill-box; transform-origin: center; animation: mp-spin 5s linear infinite; }
+@keyframes mp-spin { to { transform: rotate(360deg); } }
+
+/* Impresión flexográfica: barras de color estampándose en secuencia */
+.mp-stripe { transform-box: fill-box; transform-origin: 0% 50%; animation: mp-stamp 2.4s ease-in-out infinite; }
+.mp-stripe-1 { animation-delay: 0s; }
+.mp-stripe-2 { animation-delay: .2s; }
+.mp-stripe-3 { animation-delay: .4s; }
+.mp-stripe-4 { animation-delay: .6s; }
+@keyframes mp-stamp { 0% { transform: scaleX(0); opacity: 0; } 10% { transform: scaleX(1); opacity: 1; } 90% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(0); opacity: 0; } }
+
+/* Corte y sellado: cuchilla bajando sobre la bolsa */
+.mp-icon-cut .mp-blade { transform-box: fill-box; animation: mp-cut 1.6s ease-in-out infinite; }
+@keyframes mp-cut { 0%, 15% { transform: translateY(-14px); } 35%, 55% { transform: translateY(2px); } 75%, 100% { transform: translateY(-14px); } }
+
+@media (max-width: 1024px) {
+  .mp-icon { width: 60px; height: 60px; }
+  .mp-icon svg { width: 32px; height: 32px; }
+  .mp-connector { width: 18px; }
+}
+@media (max-width: 768px) {
+  .mp-process { flex-direction: column; gap: 1.75rem; }
+  .mp-connector { display: none; }
+  .mp-stage { padding: 0; }
+}
+
+/* CINTA TRANSPORTADORA (divisor decorativo) */
+.belt-strip { overflow: hidden; background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.belt-strip.belt-dark { background: var(--navy); border-color: rgba(255,255,255,.08); }
+.belt-track { display: flex; gap: 2.5rem; width: max-content; animation: belt-move 14s linear infinite; }
+.belt-bag { color: var(--blue-light); flex-shrink: 0; opacity: .5; }
+.belt-dark .belt-bag { color: var(--blue-light); opacity: .35; }
+@keyframes belt-move { to { transform: translateX(-50%); } }
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
