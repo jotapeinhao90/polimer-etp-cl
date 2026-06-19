@@ -141,11 +141,11 @@ a { text-decoration: none; color: inherit; }
 .bg-dark { background: var(--navy); color: var(--white); }
 
 /* STATS BAR */
-.stats-bar { background: var(--blue); color: var(--white); padding: 2rem 0; }
+.stats-bar { background: var(--blue); color: var(--white); padding: 1.1rem 0; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-.stat-item { text-align: center; padding: .75rem; }
-.stat-num { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; display: block; margin-bottom: .2rem; }
-.stat-lbl { font-size: .78rem; opacity: .8; text-transform: uppercase; letter-spacing: .05em; }
+.stat-item { text-align: center; padding: .25rem; }
+.stat-num { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: .1rem; }
+.stat-lbl { font-size: .72rem; opacity: .8; text-transform: uppercase; letter-spacing: .05em; }
 
 /* INDUSTRIES */
 .industries-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
