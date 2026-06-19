@@ -132,9 +132,9 @@ a { text-decoration: none; color: inherit; }
 .hbf-text span { font-size: .75rem; color: var(--text-light); }
 
 /* SECTIONS */
-.section-pad { padding: 5rem 0; }
+.section-pad { padding: 3.5rem 0; }
 .section-label { display: inline-block; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--blue); margin-bottom: .6rem; }
-.section-header { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.section-header { text-align: center; max-width: 640px; margin: 0 auto 2.25rem; }
 .section-header h2 { font-family: 'Outfit', sans-serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .75rem; color: var(--text); }
 .section-header p { color: var(--text-light); }
 .bg-gray { background: var(--gray-50); }
@@ -313,7 +313,7 @@ a { text-decoration: none; color: inherit; }
 /* ═══════════════════════════════════════════════
    ANIMACIÓN DE PROCESO DE FABRICACIÓN
    ═══════════════════════════════════════════════ */
-.mp-panel { position: relative; background: linear-gradient(180deg, var(--gray-50), var(--white)); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3.25rem 2rem 2.25rem; overflow: hidden; }
+.mp-panel { position: relative; background: linear-gradient(180deg, var(--gray-50), var(--white)); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem 2rem 1.75rem; overflow: hidden; }
 .mp-panel::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background-image: linear-gradient(rgba(29,78,216,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,78,216,.05) 1px, transparent 1px);
@@ -402,7 +402,7 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 768px) {
   .main-nav, .header-cta { display: none; }
   .hamburger { display: flex; }
-  .section-pad { padding: 3.5rem 0; }
+  .section-pad { padding: 2.75rem 0; }
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
   .products-grid { grid-template-columns: 1fr 1fr; }
   .features-grid { grid-template-columns: 1fr; }
