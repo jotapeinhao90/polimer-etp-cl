@@ -310,17 +310,27 @@ a { text-decoration: none; color: inherit; }
 /* ═══════════════════════════════════════════════
    ANIMACIÓN DE PROCESO DE FABRICACIÓN
    ═══════════════════════════════════════════════ */
-.mp-process { display: flex; align-items: flex-start; }
-.mp-stage { flex: 1; text-align: center; padding: 0 .5rem; min-width: 0; }
-.mp-icon { width: 76px; height: 76px; background: var(--blue-pale); border-radius: 18px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.1rem; }
+.mp-panel { position: relative; background: linear-gradient(180deg, var(--gray-50), var(--white)); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 3.25rem 2rem 2.25rem; overflow: hidden; }
+.mp-panel::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(29,78,216,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(29,78,216,.05) 1px, transparent 1px);
+  background-size: 32px 32px; mask-image: radial-gradient(ellipse 80% 80% at 50% 40%, black, transparent);
+}
+.mp-process { display: flex; align-items: flex-start; position: relative; z-index: 1; }
+.mp-stage { flex: 1; text-align: center; padding: 0 .6rem; min-width: 0; position: relative; }
+.mp-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem 1rem 1.5rem; height: 100%; transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition); position: relative; }
+.mp-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--blue-light); }
+.mp-step-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: var(--white); font-size: .72rem; font-weight: 800; font-family: 'Outfit', sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px var(--white); z-index: 2; }
+.mp-icon { width: 80px; height: 80px; border-radius: 20px; background: radial-gradient(circle at 30% 28%, var(--blue-light), var(--blue) 75%); display: flex; align-items: center; justify-content: center; margin: .35rem auto 1.1rem; box-shadow: 0 10px 22px -8px rgba(29,78,216,.5), inset 0 1px 0 rgba(255,255,255,.3); }
 .mp-stage h3 { font-size: .92rem; font-weight: 700; margin-bottom: .35rem; }
 .mp-stage p { font-size: .8rem; color: var(--text-light); line-height: 1.5; }
-.mp-connector { width: 36px; height: 2px; margin-top: 38px; flex-shrink: 0; background-image: repeating-linear-gradient(to right, var(--blue-light) 0 8px, transparent 8px 16px); background-size: 32px 2px; animation: mp-flow .6s linear infinite; }
-@keyframes mp-flow { to { background-position-x: -32px; } }
+.mp-connector { position: relative; width: 32px; height: 3px; margin-top: 56px; flex-shrink: 0; border-radius: 2px; background: linear-gradient(to right, var(--blue-light), var(--blue)); }
+.mp-connector::after { content: ''; position: absolute; top: 50%; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--white); box-shadow: 0 0 6px 1px rgba(29,78,216,.7); transform: translate(-50%,-50%); animation: mp-pellet 1.6s linear infinite; }
+@keyframes mp-pellet { 0% { left: 0%; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
 
 /* Extrusión: glow pulsante en el dado de salida */
 .mp-icon-extruder .mp-glow { transform-box: fill-box; transform-origin: center; animation: mp-pulse 1.3s ease-in-out infinite; }
-@keyframes mp-pulse { 0%, 100% { opacity: .4; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes mp-pulse { 0%, 100% { opacity: .5; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.2); } }
 
 /* Soplado de burbuja: respiración de la burbuja de film */
 .mp-icon-bubble .mp-balloon { transform-box: fill-box; transform-origin: bottom center; animation: mp-breathe 2.2s ease-in-out infinite; }
@@ -343,23 +353,30 @@ a { text-decoration: none; color: inherit; }
 @keyframes mp-cut { 0%, 15% { transform: translateY(-14px); } 35%, 55% { transform: translateY(2px); } 75%, 100% { transform: translateY(-14px); } }
 
 @media (max-width: 1024px) {
-  .mp-icon { width: 60px; height: 60px; }
+  .mp-panel { padding: 3rem 1.25rem 2rem; }
+  .mp-icon { width: 64px; height: 64px; border-radius: 16px; }
   .mp-icon svg { width: 32px; height: 32px; }
-  .mp-connector { width: 18px; }
+  .mp-connector { width: 16px; margin-top: 48px; }
 }
 @media (max-width: 768px) {
-  .mp-process { flex-direction: column; gap: 1.75rem; }
+  .mp-process { flex-direction: column; gap: 2.25rem; }
   .mp-connector { display: none; }
   .mp-stage { padding: 0; }
 }
 
 /* CINTA TRANSPORTADORA (divisor decorativo) */
-.belt-strip { overflow: hidden; background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 0; }
+.belt-strip {
+  overflow: hidden; background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.1rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
 .belt-strip.belt-dark { background: var(--navy); border-color: rgba(255,255,255,.08); }
 .belt-track { display: flex; gap: 2.5rem; width: max-content; animation: belt-move 14s linear infinite; }
-.belt-bag { color: var(--blue-light); flex-shrink: 0; opacity: .5; }
-.belt-dark .belt-bag { color: var(--blue-light); opacity: .35; }
+.belt-bag { color: var(--blue-light); flex-shrink: 0; opacity: .55; animation: belt-bounce 1.2s ease-in-out infinite; }
+.belt-bag:nth-child(even) { animation-delay: .3s; }
+.belt-dark .belt-bag { color: var(--blue-light); opacity: .4; }
 @keyframes belt-move { to { transform: translateX(-50%); } }
+@keyframes belt-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
 
 /* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
