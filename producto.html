@@ -46,7 +46,29 @@
             <a href="index.html#inicio" class="nav-link">Inicio</a>
             <a href="index.html#productos" class="nav-link active">Productos</a>
             <a href="index.html#nosotros" class="nav-link">Quiénes Somos</a>
-            <a href="precios.html" class="nav-link">Precios</a>
+            <div class="nav-item" style="display:inline-block;">
+              <a href="precios.html" class="nav-link" tabindex="0">
+                Precios
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </a>
+              <div class="dropdown dropdown-prices">
+                <div class="nav-price-card">
+                  <div class="nav-price-card-head">
+                    <span class="nav-price-label">Petróleo WTI</span>
+                    <span class="nav-price-value" id="navOilValue">—</span>
+                  </div>
+                  <svg class="nav-price-chart" id="navOilChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+                </div>
+                <div class="nav-price-card">
+                  <div class="nav-price-card-head">
+                    <span class="nav-price-label">Índice Resinas</span>
+                    <span class="nav-price-value" id="navResinValue">—</span>
+                  </div>
+                  <svg class="nav-price-chart" id="navResinChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+                </div>
+                <a href="precios.html" class="dropdown-view-all">Ver precios completos →</a>
+              </div>
+            </div>
             <a href="index.html#contacto" class="nav-link">Contacto</a>
         </nav>
         <a href="https://wa.me/56933643058" target="_blank" class="btn btn-primary nav-cta">
@@ -222,5 +244,6 @@
 <script src="productos-data.js"></script>
 <script src="producto.js"></script>
 <script src="wa-bubble.js"></script>
+<script src="precios.js"></script>
 </body>
 </html>

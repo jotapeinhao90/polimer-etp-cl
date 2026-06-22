@@ -71,7 +71,29 @@
             </a>
           </div>
         </div>
-        <a href="precios.html" class="nav-link active">Precios</a>
+        <div class="nav-item">
+          <a href="precios.html" class="nav-link active" tabindex="0">
+            Precios
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="dropdown dropdown-prices">
+            <div class="nav-price-card">
+              <div class="nav-price-card-head">
+                <span class="nav-price-label">Petróleo WTI</span>
+                <span class="nav-price-value" id="navOilValue">—</span>
+              </div>
+              <svg class="nav-price-chart" id="navOilChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="nav-price-card">
+              <div class="nav-price-card-head">
+                <span class="nav-price-label">Índice Resinas</span>
+                <span class="nav-price-value" id="navResinValue">—</span>
+              </div>
+              <svg class="nav-price-chart" id="navResinChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+            </div>
+            <a href="precios.html" class="dropdown-view-all">Ver precios completos →</a>
+          </div>
+        </div>
         <a href="nosotros.html" class="nav-link">Nosotros</a>
         <a href="https://wa.me/56933643058?text=Hola%2C%20quiero%20cotizar%20empaques%20para%20mi%20empresa." target="_blank" rel="noopener" class="btn btn-primary btn-sm header-cta">Cotizar ahora →</a>
       </nav>
@@ -150,7 +172,12 @@
           <span id="oilValue">—</span>
           <span class="price-card-change" id="oilChange"></span>
         </div>
-        <svg id="oilChart" class="price-sparkline" viewBox="0 0 320 80" preserveAspectRatio="none"></svg>
+        <div class="price-range-filter" id="oilRangeFilter"></div>
+        <div class="price-chart-wrap">
+          <svg id="oilChart" class="price-chart" viewBox="0 0 340 170" preserveAspectRatio="none"></svg>
+          <div class="price-tooltip" id="oilTooltip"></div>
+        </div>
+        <div class="price-axis-labels" id="oilAxisLabels"></div>
         <span class="price-card-updated" id="oilUpdated"></span>
       </div>
 
@@ -163,7 +190,12 @@
           <span id="resinValue">—</span>
           <span class="price-card-change" id="resinChange"></span>
         </div>
-        <svg id="resinChart" class="price-sparkline" viewBox="0 0 320 80" preserveAspectRatio="none"></svg>
+        <div class="price-range-filter" id="resinRangeFilter"></div>
+        <div class="price-chart-wrap">
+          <svg id="resinChart" class="price-chart" viewBox="0 0 340 170" preserveAspectRatio="none"></svg>
+          <div class="price-tooltip" id="resinTooltip"></div>
+        </div>
+        <div class="price-axis-labels" id="resinAxisLabels"></div>
         <span class="price-card-updated" id="resinUpdated"></span>
       </div>
 
