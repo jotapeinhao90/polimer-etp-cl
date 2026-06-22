@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsEl = document.getElementById('priceCards');
     if (!statusEl || !cardsEl) return;
 
-    fetch('data/precios.json', { cache: 'no-store' })
+    fetch('data/precios.json?v=' + Date.now(), { cache: 'no-store' })
         .then(res => res.json())
         .then(renderData)
         .catch(() => {
