@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return card && Array.isArray(card.series) && card.series.length > 1;
     }
 
-    function formatDate(iso, short) {
+    function formatDate(iso, mode) {
         const d = new Date(iso + 'T00:00:00');
         if (isNaN(d)) return iso;
-        return short
-            ? d.toLocaleDateString('es-CL', { day: '2-digit', month: 'short' })
-            : d.toLocaleDateString('es-CL', { day: '2-digit', month: 'short', year: 'numeric' });
+        if (mode === 'axis-year') return d.toLocaleDateString('es-CL', { month: 'short', year: '2-digit' });
+        if (mode === 'axis-short') return d.toLocaleDateString('es-CL', { day: '2-digit', month: 'short' });
+        return d.toLocaleDateString('es-CL', { day: '2-digit', month: 'short', year: 'numeric' });
     }
 
     // ───────────────────────── PÁGINA DE PRECIOS COMPLETA ─────────────────────────
@@ -188,12 +188,16 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (axisLabelsEl) {
+            const firstYear = new Date(series[0].date + 'T00:00:00').getFullYear();
+            const lastYear = new Date(series[series.length - 1].date + 'T00:00:00').getFullYear();
+            const axisMode = firstYear !== lastYear ? 'axis-year' : 'axis-short';
+
             const labelCount = Math.min(5, series.length);
             axisLabelsEl.innerHTML = '';
             for (let i = 0; i < labelCount; i++) {
                 const idx = labelCount === 1 ? 0 : Math.round((i / (labelCount - 1)) * (series.length - 1));
                 const span = document.createElement('span');
-                span.textContent = formatDate(series[idx].date, true);
+                span.textContent = formatDate(series[idx].date, axisMode);
                 axisLabelsEl.appendChild(span);
             }
         }
