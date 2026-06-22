@@ -70,7 +70,7 @@ const PRODUCTOS = {
     "bolsas-rollo-prepicadas": {
         titulo: "Bolsas en Rollo Prepicadas",
         categoria: "Bolsas para Envasado",
-        img: "",
+        img: "img/prod-films.jpg",
         descripcion_corta: "Bolsas en rollo continuo con sistema de prepicado para separación fácil y limpia, optimizando almacenamiento y dispensación.",
         descripcion: "ETP Polimer ofrece bolsas en rollo prepicadas fabricadas con láminas de polietileno de alta calidad y otros polímeros flexibles según su necesidad. Se presentan en formato continuo enrollado con sistema de prepicado que permite separar cada unidad de manera fácil y limpia. Están diseñadas para optimizar almacenamiento y facilitar dispensación controlada.",
         caracteristicas: [
@@ -121,7 +121,7 @@ const PRODUCTOS = {
     "envases-especiales": {
         titulo: "Envases Especiales a la Medida",
         categoria: "Soluciones Personalizadas",
-        img: "",
+        img: "img/bolsa-puuch-0_edited.jpg",
         descripcion_corta: "Soluciones de envasado flexible personalizadas para productos con requisitos técnicos, funcionales o comerciales específicos.",
         descripcion: "ETP Polimer ofrece soluciones de envasado flexible personalizadas para productos que requieren requisitos técnicos, funcionales o comerciales específicos. Nos especializamos en crear envases que van más allá de las opciones estándar del mercado.",
         caracteristicas: [
@@ -138,7 +138,7 @@ const PRODUCTOS = {
     "puche-doypack": {
         titulo: "Puche Doypack",
         categoria: "Envases Flexibles",
-        img: "",
+        img: "img/prod-formatos.jpg",
         descripcion_corta: "Bolsas Stand-Up que se mantienen en posición vertical, maximizando la exposición de marca en puntos de venta.",
         descripcion: "ETP Polimer ofrece Pouches Doypack, una solución de envasado flexible y moderna que permite que los productos se mantengan en posición vertical. Esta solución destaca especialmente en puntos de venta por su diseño inteligente con fuelle en la base, maximizando la exposición de marca y producto en estanterías.",
         caracteristicas: [

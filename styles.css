@@ -410,3 +410,12 @@ a { text-decoration: none; color: inherit; }
   .values-grid { grid-template-columns: 1fr; }
   .topbar-right { display: none; }
 }
+
+/* PRICE TICKER (marquee) */
+.price-ticker { overflow: hidden; background: var(--green); white-space: nowrap; }
+.price-ticker-track { display: flex; width: max-content; animation: ticker-scroll 22s linear infinite; }
+.price-ticker-item { display: flex; align-items: center; gap: .6rem; padding: .55rem 2.5rem; color: var(--white); font-weight: 600; font-size: .85rem; letter-spacing: .01em; }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .price-ticker-track { animation: none; }
+}
