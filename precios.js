@@ -23,39 +23,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ───────────────────────── PÁGINA DE PRECIOS COMPLETA ─────────────────────────
+    // El petróleo lo renderiza el widget de TradingView embebido directo en el HTML;
+    // aquí solo se dibuja el índice de resinas (FRED), que no existe como símbolo ahí.
     function renderPricesPage(data) {
         const statusEl = document.getElementById('preciosStatus');
         const cardsEl = document.getElementById('priceCards');
         if (!statusEl || !cardsEl) return;
 
-        const hasOil = isValid(data.oil);
         const hasResin = isValid(data.resin_ppi);
 
-        if (!hasOil && !hasResin) {
+        if (!hasResin) {
             statusEl.textContent = 'Todavía no hay datos disponibles — la primera actualización automática está pendiente.';
             return;
         }
         statusEl.style.display = 'none';
         cardsEl.style.display = '';
 
-        if (hasOil) {
-            setupCard(data.oil, 'oil', {
-                decimals: 2, valuePrefix: 'US$ ',
-                ranges: [{ label: '30D', n: 30 }, { label: '60D', n: 60 }, { label: 'Todo', n: Infinity }]
-            });
-        } else hideCard('oil');
-
-        if (hasResin) {
-            setupCard(data.resin_ppi, 'resin', {
-                decimals: 1, valuePrefix: '',
-                ranges: [{ label: '1A', n: 12 }, { label: '3A', n: 36 }, { label: 'Todo', n: Infinity }]
-            });
-        } else hideCard('resin');
-    }
-
-    function hideCard(prefix) {
-        const el = document.getElementById(prefix + 'Label');
-        if (el && el.closest('.price-card')) el.closest('.price-card').style.display = 'none';
+        setupCard(data.resin_ppi, 'resin', {
+            decimals: 1, valuePrefix: '',
+            ranges: [{ label: '1A', n: 12 }, { label: '3A', n: 36 }, { label: 'Todo', n: Infinity }]
+        });
     }
 
     function setupCard(card, prefix, opts) {
@@ -203,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ───────────────────────── MINI GRÁFICOS DEL MENÚ ─────────────────────────
+    // ───────────────────────── MINI GRÁFICO DEL MENÚ ─────────────────────────
+    // El mini-widget de petróleo en el dropdown lo dibuja TradingView directo en el HTML.
     function renderNavDropdown(data) {
-        if (isValid(data.oil)) drawMiniChart('navOilChart', 'navOilValue', data.oil.series, 2, 'US$ ');
         if (isValid(data.resin_ppi)) drawMiniChart('navResinChart', 'navResinValue', data.resin_ppi.series, 1, '');
     }
 

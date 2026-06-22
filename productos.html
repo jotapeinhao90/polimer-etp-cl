@@ -80,9 +80,25 @@
             <div class="nav-price-card">
               <div class="nav-price-card-head">
                 <span class="nav-price-label">Petróleo WTI</span>
-                <span class="nav-price-value" id="navOilValue">—</span>
+                <span class="nav-price-badge">en vivo</span>
               </div>
-              <svg class="nav-price-chart" id="navOilChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+              <div class="tradingview-widget-container" style="height:54px;">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                {
+                  "symbol": "TVC:USOIL",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "es",
+                  "dateRange": "1M",
+                  "colorTheme": "light",
+                  "isTransparent": true,
+                  "autosize": true,
+                  "chartOnly": false,
+                  "noTimeScale": true
+                }
+                </script>
+              </div>
             </div>
             <div class="nav-price-card">
               <div class="nav-price-card-head">

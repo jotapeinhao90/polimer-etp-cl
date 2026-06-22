@@ -80,9 +80,25 @@
             <div class="nav-price-card">
               <div class="nav-price-card-head">
                 <span class="nav-price-label">Petróleo WTI</span>
-                <span class="nav-price-value" id="navOilValue">—</span>
+                <span class="nav-price-badge">en vivo</span>
               </div>
-              <svg class="nav-price-chart" id="navOilChart" viewBox="0 0 120 40" preserveAspectRatio="none"></svg>
+              <div class="tradingview-widget-container" style="height:54px;">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+                {
+                  "symbol": "TVC:USOIL",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "es",
+                  "dateRange": "1M",
+                  "colorTheme": "light",
+                  "isTransparent": true,
+                  "autosize": true,
+                  "chartOnly": false,
+                  "noTimeScale": true
+                }
+                </script>
+              </div>
             </div>
             <div class="nav-price-card">
               <div class="nav-price-card-head">
@@ -165,20 +181,40 @@
 
       <div class="price-card">
         <div class="price-card-head">
-          <span class="price-card-label" id="oilLabel">Petróleo WTI</span>
-          <span class="price-card-source" id="oilSource"></span>
+          <span class="price-card-label">Petróleo WTI</span>
+          <span class="price-card-source">TradingView · en vivo</span>
         </div>
-        <div class="price-card-value">
-          <span id="oilValue">—</span>
-          <span class="price-card-change" id="oilChange"></span>
+        <div class="tradingview-widget-container" style="height:268px;">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+          {
+            "symbols": [["TVC:USOIL|1M"]],
+            "chartOnly": false,
+            "width": "100%",
+            "height": "100%",
+            "locale": "es",
+            "colorTheme": "light",
+            "autosize": true,
+            "showVolume": false,
+            "showMA": false,
+            "hideDateRanges": false,
+            "hideMarketStatus": false,
+            "hideSymbolLogo": true,
+            "scalePosition": "right",
+            "scaleMode": "Normal",
+            "fontFamily": "Inter, sans-serif",
+            "fontSize": "11",
+            "noTimeScale": false,
+            "valuesTracking": "1",
+            "changeMode": "price-and-percent",
+            "chartType": "area",
+            "lineWidth": 2,
+            "lineType": 0,
+            "dateRanges": ["1d|1", "1m|30", "3m|60", "12m|1D", "60m|1W", "all|1M"]
+          }
+          </script>
         </div>
-        <div class="price-range-filter" id="oilRangeFilter"></div>
-        <div class="price-chart-wrap">
-          <svg id="oilChart" class="price-chart" viewBox="0 0 340 170" preserveAspectRatio="none"></svg>
-          <div class="price-tooltip" id="oilTooltip"></div>
-        </div>
-        <div class="price-axis-labels" id="oilAxisLabels"></div>
-        <span class="price-card-updated" id="oilUpdated"></span>
+        <span class="price-card-updated">USD/barril · Precio en vivo (datos de mercado, podrían tener algunos minutos de rezago según el plan gratuito de TradingView)</span>
       </div>
 
       <div class="price-card">
@@ -203,9 +239,9 @@
 
     <div class="price-disclaimer">
       <span class="price-disclaimer-title">¿Qué estás viendo?</span>
-      <p>El <strong>petróleo WTI</strong> es el precio spot oficial publicado por la EIA (U.S. Energy Information Administration) — es el insumo base de la cadena de producción del polietileno, y por eso es el indicador líder de hacia dónde se mueven los costos de resina.</p>
-      <p>El <strong>índice de resinas termoplásticas</strong> es el PPI (Producer Price Index) que publica el Bureau of Labor Statistics de EE.UU. para la industria de manufactura de resinas plásticas — un agregado de mercado, no un precio spot exclusivo de PEBD o PEAD. No existe hoy una fuente pública gratuita que separe el precio spot de PEBD (baja densidad) y PEAD (alta densidad) en tiempo real; esos datos los venden proveedores especializados (ChemAnalyst, ChemOrbis, S&amp;P Platts, Intratec).</p>
-      <p>Ambos se actualizan automáticamente todos los días. Esta página es una referencia de mercado — tu precio final siempre se confirma en la cotización.</p>
+      <p>El <strong>petróleo WTI</strong> se muestra en vivo con datos de mercado (vía TradingView) — es el insumo base de la cadena de producción del polietileno, y por eso es el indicador líder de hacia dónde se mueven los costos de resina.</p>
+      <p>El <strong>índice de resinas termoplásticas</strong> es el PPI (Producer Price Index) que publica el Bureau of Labor Statistics de EE.UU. para la industria de manufactura de resinas plásticas — un agregado de mercado, no un precio spot exclusivo de PEBD o PEAD, y se actualiza automáticamente todos los días. No existe hoy una fuente pública gratuita que separe el precio spot de PEBD (baja densidad) y PEAD (alta densidad) en tiempo real; esos datos los venden proveedores especializados (ChemAnalyst, ChemOrbis, S&amp;P Platts, Intratec).</p>
+      <p>Esta página es una referencia de mercado — tu precio final siempre se confirma en la cotización.</p>
     </div>
   </div>
 </section>

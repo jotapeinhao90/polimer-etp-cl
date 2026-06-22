@@ -483,6 +483,7 @@ a { text-decoration: none; color: inherit; }
 .nav-price-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
 .nav-price-label { font-size: .8rem; font-weight: 600; color: var(--text); }
 .nav-price-value { font-size: .8rem; font-weight: 700; color: var(--text); }
+.nav-price-badge { font-size: .68rem; font-weight: 700; color: var(--green); background: var(--green-pale); padding: .1rem .5rem; border-radius: 100px; text-transform: uppercase; letter-spacing: .03em; }
 .nav-price-chart { width: 100%; height: 36px; display: block; }
 .dropdown-view-all { display: block; text-align: center; margin-top: .5rem; padding-top: .75rem; border-top: 1px solid var(--border); font-size: .82rem; font-weight: 600; color: var(--blue); }
 .dropdown-view-all:hover { color: #1E40AF; }
