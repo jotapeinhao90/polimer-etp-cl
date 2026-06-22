@@ -367,20 +367,6 @@ a { text-decoration: none; color: inherit; }
   .mp-stage { padding: 0; }
 }
 
-/* CINTA TRANSPORTADORA (divisor decorativo) */
-.belt-strip {
-  overflow: hidden; background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.1rem 0;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-.belt-strip.belt-dark { background: var(--navy); border-color: rgba(255,255,255,.08); }
-.belt-track { display: flex; gap: 2.5rem; width: max-content; animation: belt-move 14s linear infinite; }
-.belt-bag { color: var(--blue-light); flex-shrink: 0; opacity: .55; animation: belt-bounce 1.2s ease-in-out infinite; }
-.belt-bag:nth-child(even) { animation-delay: .3s; }
-.belt-dark .belt-bag { color: var(--blue-light); opacity: .4; }
-@keyframes belt-move { to { transform: translateX(-50%); } }
-@keyframes belt-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-
 /* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
