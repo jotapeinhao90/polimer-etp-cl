@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // WhatsApp links
     const waMsg = encodeURIComponent(`Hola, me gustaría cotizar "${p.titulo}" y conocer más detalles.`);
-    const waUrl = `https://wa.me/56944843503?text=${waMsg}`;
+    const waUrl = `https://wa.me/56933643058?text=${waMsg}`;
     document.getElementById('prodWaBtn').href = waUrl;
     document.getElementById('prodWaBtn2').href = waUrl;
 
