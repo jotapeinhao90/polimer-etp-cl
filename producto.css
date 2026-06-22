@@ -2,6 +2,15 @@
    PÁGINA DE PRODUCTO — ETP Polimer
    ============================================= */
 
+:root {
+  --primary:       var(--blue);
+  --primary-dark:  var(--navy);
+  --primary-mid:   var(--blue-light);
+  --primary-light: var(--blue-pale);
+  --bg-gray:       var(--gray-50);
+  --text-muted:    var(--text-light);
+}
+
 /* Breadcrumb */
 .breadcrumb-bar {
     background: var(--bg-gray);
