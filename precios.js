@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         document.getElementById(ids.updated).textContent =
-            `${card.unit} · Actualizado ${formatDate(last.date)}`;
+            `${card.unit} · Precio oficial del ${formatDate(last.date)}`;
 
         drawSparkline(document.getElementById(ids.chart), series.map(p => p.value));
     }
