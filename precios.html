@@ -198,10 +198,15 @@
 
       <div class="price-card">
         <div class="price-card-head">
-          <span class="price-card-label">Petróleo WTI</span>
-          <span class="price-card-source">TradingView · en vivo</span>
+          <div class="price-card-title">
+            <span class="price-card-icon oil">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </span>
+            <span class="price-card-label">Petróleo WTI</span>
+          </div>
+          <span class="price-card-source"><span class="live-dot"></span>En vivo</span>
         </div>
-        <div class="tradingview-widget-container" style="height:268px;">
+        <div class="price-widget-frame tradingview-widget-container" style="height:268px;">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
           {
@@ -231,15 +236,23 @@
           }
           </script>
         </div>
-        <span class="price-card-updated">USD/barril · Datos de mercado en vivo vía TradingView</span>
+        <span class="price-card-foot">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Dólares por barril · datos vía TradingView
+        </span>
       </div>
 
       <div class="price-card">
         <div class="price-card-head">
-          <span class="price-card-label">Índice de Resinas Plásticas (PPI)</span>
-          <span class="price-card-source">TradingView · FRED</span>
+          <div class="price-card-title">
+            <span class="price-card-icon resin">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+            </span>
+            <span class="price-card-label">Resinas Plásticas (PPI)</span>
+          </div>
+          <span class="price-card-source">Mensual</span>
         </div>
-        <div class="tradingview-widget-container" style="height:268px;">
+        <div class="price-widget-frame tradingview-widget-container" style="height:268px;">
           <div class="tradingview-widget-container__widget"></div>
           <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
           {
@@ -269,13 +282,19 @@
           }
           </script>
         </div>
-        <span class="price-card-updated">Índice PPI (BLS) · Producer Price Index by Industry: Plastics Material and Resin Manufacturing</span>
+        <span class="price-card-foot">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Índice PPI mensual · fuente BLS / FRED
+        </span>
       </div>
 
     </div>
 
     <div class="price-disclaimer">
-      <span class="price-disclaimer-title">¿Qué estás viendo?</span>
+      <span class="price-disclaimer-title">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        ¿Qué estás viendo?
+      </span>
       <p>El <strong>petróleo WTI</strong> se muestra en vivo con datos de mercado (vía TradingView) — es el insumo base de la cadena de producción del polietileno, y por eso es el indicador líder de hacia dónde se mueven los costos de resina.</p>
       <p>El <strong>índice de resinas plásticas</strong> es el PPI (Producer Price Index) que publica el Bureau of Labor Statistics de EE.UU. para la industria de manufactura de resinas y materiales plásticos (también vía TradingView/FRED) — un agregado de mercado, no un precio spot exclusivo de PEBD o PEAD. No existe hoy una fuente pública gratuita que separe el precio spot de PEBD (baja densidad) y PEAD (alta densidad) en tiempo real; esos datos los venden proveedores especializados (ChemAnalyst, ChemOrbis, S&amp;P Platts, Intratec).</p>
       <p>Esta página es una referencia de mercado — tu precio final siempre se confirma en la cotización.</p>
