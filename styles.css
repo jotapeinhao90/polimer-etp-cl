@@ -425,7 +425,11 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
   .industries-grid { grid-template-columns: 1fr 1fr; }
-  .products-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr 1fr; gap: .85rem; }
+  .products-grid .product-card-body { padding: .85rem; }
+  .products-grid .product-card h3 { font-size: .85rem; }
+  .products-grid .product-card p { font-size: .76rem; line-height: 1.4; }
+  .products-grid .product-card-link { font-size: .76rem; margin-top: .6rem; }
   .catalog-grid { grid-template-columns: 1fr; }
   .values-grid { grid-template-columns: 1fr; }
   .topbar-right { display: none; }
