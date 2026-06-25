@@ -145,4 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ── 6. WHATSAPP MESSAGE BY CATEGORY (productos.html?cat=...) ──
+    const CATEGORY_WA_LABELS = {
+        bolsas: 'bolsas industriales',
+        films: 'films',
+        formatos: 'formatos especiales'
+    };
+    const catParam = new URLSearchParams(window.location.search).get('cat');
+    if (catParam && CATEGORY_WA_LABELS[catParam]) {
+        const waMsg = encodeURIComponent(`Hola, estoy interesado en ${CATEGORY_WA_LABELS[catParam]} para mi empresa.`);
+        const waUrl = `https://wa.me/56933643058?text=${waMsg}`;
+        document.querySelectorAll('a[href*="wa.me"]').forEach(a => { a.href = waUrl; });
+    }
+
 });

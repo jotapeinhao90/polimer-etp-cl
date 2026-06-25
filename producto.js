@@ -57,11 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.display = 'none';
     }
 
-    // WhatsApp links
-    const waMsg = encodeURIComponent(`Hola, me gustaría cotizar "${p.titulo}" y conocer más detalles.`);
-    const waUrl = `https://wa.me/56933643058?text=${waMsg}`;
-    document.getElementById('prodWaBtn').href = waUrl;
-    document.getElementById('prodWaBtn2').href = waUrl;
+    // WhatsApp links — every wa.me link on the page mentions this specific product
+    const waCotizarMsg = encodeURIComponent(`Hola, me gustaría cotizar "${p.titulo}" y conocer más detalles.`);
+    const waConsultaMsg = encodeURIComponent(`Hola, tengo una consulta sobre "${p.titulo}".`);
+    const waCotizarUrl = `https://wa.me/56933643058?text=${waCotizarMsg}`;
+    const waConsultaUrl = `https://wa.me/56933643058?text=${waConsultaMsg}`;
+    document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        const isConsulta = /consulta/i.test(a.textContent);
+        a.href = isConsulta ? waConsultaUrl : waCotizarUrl;
+    });
+    document.getElementById('prodWaBtn').href = waCotizarUrl;
+    document.getElementById('prodWaBtn2').href = waCotizarUrl;
 
     // Detail
     document.getElementById('prodDescLarga').textContent = p.descripcion;
