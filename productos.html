@@ -13,9 +13,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192x192.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <!-- Google Ads (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18264515878"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18264515878');</script>
 </head>
 <body>
 
@@ -308,7 +308,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2025 ETP Polimer. Todos los derechos reservados.</span>
-      <span>Diseño por <a href="https://jpbmarketing.cl" style="color:rgba(255,255,255,.45);">JPB Marketing</a></span>
+      <span>Desarrollada por <a href="https://jpbmarketing.cl" style="color:rgba(255,255,255,.45);">JPB Marketing</a></span>
     </div>
   </div>
 </footer>
@@ -321,5 +321,16 @@
 <script src="productos-data.js"></script>
 <script src="main.js"></script>
 <script src="wa-bubble.js"></script>
+<!-- Google Ads: conversion clic WhatsApp -->
+<script>
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+    if(a && typeof gtag==='function'){
+      gtag('event','conversion',{'send_to':'AW-18264515878/K7VtCLnWt8QcEKbKmYVE'});
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>
