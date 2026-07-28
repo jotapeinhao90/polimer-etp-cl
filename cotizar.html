@@ -501,5 +501,28 @@
   }, true);
 })();
 </script>
+<!-- Mensaje WhatsApp por campana (atribucion por campana) -->
+<script>
+(function(){
+  var msgs = {
+    film:    'Hola, quiero cotizar film stretch para mi empresa.',
+    bolsas:  'Hola, me gustaría cotizar bolsas plásticas industriales.',
+    general: 'Hola, quiero elaborar una cotización de empaques flexibles.'
+  };
+  try {
+    var p = new URLSearchParams(location.search).get('c');
+    if (p && msgs[p]) sessionStorage.setItem('wa_msg', msgs[p]);
+  } catch(e){}
+  var msg = null;
+  try { msg = sessionStorage.getItem('wa_msg'); } catch(e){}
+  if (!msg) return;
+  var enc = encodeURIComponent(msg);
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+    var h = a.getAttribute('href');
+    if (/[?&]text=/.test(h)) { a.setAttribute('href', h.replace(/([?&]text=)[^&]*/, '$1'+enc)); }
+    else { a.setAttribute('href', h + (h.indexOf('?')>-1?'&':'?') + 'text=' + enc); }
+  });
+})();
+</script>
 </body>
 </html>
