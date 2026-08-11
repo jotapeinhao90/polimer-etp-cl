@@ -1,4 +1,5 @@
 _worker.js
+smtp.js
 wrangler.jsonc
 schema.sql
 .git

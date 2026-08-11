@@ -1,3 +1,5 @@
+import { sendMail } from "./smtp.js";
+
 const CLIENT_EMAIL = "cbayas@polymer.cl";
 const CC_EMAIL = "jpbayas@jpbmarketing.cl";
 
@@ -49,24 +51,23 @@ async function handleLead(request, env) {
 
   let mailSent = true;
   try {
-    const res = await fetch(`https://formsubmit.co/ajax/${CLIENT_EMAIL}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        _subject: `Nueva cotización desde el sitio — ${nombre} (${empresa})`,
-        _cc: CC_EMAIL,
-        Nombre: nombre,
-        Correo: email,
-        Empresa: empresa,
-        "Qué necesita": producto,
-        "Medidas (ancho x largo mm)": `${anchoMm} x ${largoMm}`,
-        Micraje: micraje,
-        "Cantidad mensual": volumenMensual,
-        Origen: origen,
-      }),
+    await sendMail(env, {
+      to: CLIENT_EMAIL,
+      cc: CC_EMAIL,
+      subject: `Nueva cotización desde el sitio — ${nombre} (${empresa})`,
+      text: [
+        `Nombre: ${nombre}`,
+        `Correo: ${email}`,
+        `Empresa: ${empresa}`,
+        `Qué necesita: ${producto}`,
+        `Medidas (ancho x largo mm): ${anchoMm} x ${largoMm}`,
+        `Micraje: ${micraje}`,
+        `Cantidad mensual: ${volumenMensual}`,
+        `Origen: ${origen}`,
+      ].join("\n"),
     });
-    mailSent = res.ok;
-  } catch {
+  } catch (err) {
+    console.error("sendMail failed:", err && err.message);
     mailSent = false;
   }
 
