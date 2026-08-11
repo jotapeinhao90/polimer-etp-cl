@@ -1,0 +1,9 @@
+_worker.js
+wrangler.jsonc
+schema.sql
+.git
+.git/**
+.wrangler
+.wrangler/**
+.DS_Store
+**/.DS_Store

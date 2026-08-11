@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buzón de contactos — ETP Polimer</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.ico" sizes="any">
+<style>
+  :root { --blue:#0a3d7a; --blue-light:#1a5cb8; --text:#1a2332; --text-light:#64748b; --border:#e2e8f0; --bg:#f8fafc; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  header.top { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.75rem; flex-wrap:wrap; }
+  h1 { font-size:1.4rem; margin:0; }
+  .sub { color:var(--text-light); font-size:.9rem; margin-top:.25rem; }
+  .btn { background:var(--blue); color:#fff; border:none; padding:.6rem 1.1rem; border-radius:8px; font-weight:600; cursor:pointer; font-size:.85rem; }
+  .btn:hover { background:var(--blue-light); }
+
+  #login { max-width:360px; margin:4rem auto; background:#fff; border:1px solid var(--border); border-radius:14px; padding:2rem; text-align:center; }
+  #login h2 { margin-top:0; font-size:1.1rem; }
+  #login input { width:100%; padding:.7rem .85rem; border:1px solid var(--border); border-radius:8px; font-size:.95rem; margin:1rem 0; }
+  #login .err { color:#dc2626; font-size:.82rem; min-height:1.2em; }
+
+  #panel { display:none; }
+  .card { background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  table { width:100%; border-collapse:collapse; font-size:.86rem; }
+  th, td { text-align:left; padding:.75rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { background:var(--bg); font-weight:600; color:var(--text-light); font-size:.78rem; text-transform:uppercase; letter-spacing:.03em; }
+  tr:last-child td { border-bottom:none; }
+  .producto-cell { max-width:320px; white-space:pre-wrap; }
+  .empty { padding:3rem 1rem; text-align:center; color:var(--text-light); }
+  .wa-link { color:#1DA851; font-weight:600; text-decoration:none; white-space:nowrap; }
+  .wa-link:hover { text-decoration:underline; }
+  .loading { padding:2rem; text-align:center; color:var(--text-light); }
+</style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Buzón de contactos</h2>
+  <p style="color:var(--text-light);font-size:.85rem;">Ingresá la contraseña que te entregó JPB Marketing.</p>
+  <input type="password" id="pw" placeholder="Contraseña">
+  <div class="err" id="err"></div>
+  <button class="btn" id="btnLogin" style="width:100%;">Entrar</button>
+</div>
+
+<div class="wrap" id="panel">
+  <header class="top">
+    <div>
+      <h1>Contactos recibidos por WhatsApp</h1>
+      <div class="sub" id="count">Cargando…</div>
+    </div>
+    <button class="btn" id="btnRefresh">Actualizar</button>
+  </header>
+  <div class="card">
+    <div id="tableWrap"><div class="loading">Cargando contactos…</div></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var KEY = 'polimer_buzon_key';
+
+  function fmtDate(iso){
+    try {
+      var d = new Date(iso.replace(' ', 'T') + 'Z');
+      return d.toLocaleString('es-CL', { dateStyle:'short', timeStyle:'short' });
+    } catch(e) { return iso; }
+  }
+
+  function waLink(l){
+    var text = 'Hola ' + l.nombre + ', te contactamos de ETP Polimer respecto a tu consulta.';
+    var phone = (l.telefono || '').replace(/\D/g,'');
+    if (!phone) return null;
+    return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
+  }
+
+  function render(leads){
+    document.getElementById('count').textContent = leads.length + ' contacto' + (leads.length===1?'':'s');
+    if (!leads.length) {
+      document.getElementById('tableWrap').innerHTML = '<div class="empty">Todavía no llegaron contactos por el formulario.</div>';
+      return;
+    }
+    var rows = leads.map(function(l){
+      var wa = waLink(l);
+      return '<tr>' +
+        '<td>' + fmtDate(l.created_at) + '</td>' +
+        '<td>' + escapeHtml(l.nombre) + '</td>' +
+        '<td>' + escapeHtml(l.empresa || '—') + '</td>' +
+        '<td>' + (wa ? '<a class="wa-link" href="'+wa+'" target="_blank" rel="noopener">' + escapeHtml(l.telefono) + '</a>' : escapeHtml(l.telefono || '—')) + '</td>' +
+        '<td class="producto-cell">' + escapeHtml(l.producto || '—') + '</td>' +
+        '</tr>';
+    }).join('');
+    document.getElementById('tableWrap').innerHTML =
+      '<table><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Teléfono</th><th>Consulta</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  function escapeHtml(str){
+    return String(str == null ? '' : str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+
+  function load(key){
+    document.getElementById('tableWrap').innerHTML = '<div class="loading">Cargando contactos…</div>';
+    fetch('/api/leads', { headers: { 'x-buzon-key': key } })
+      .then(function(r){
+        if (r.status === 401) throw new Error('unauthorized');
+        return r.json();
+      })
+      .then(function(data){
+        if (!data.ok) throw new Error('error');
+        sessionStorage.setItem(KEY, key);
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('panel').style.display = 'block';
+        render(data.leads);
+      })
+      .catch(function(err){
+        if (err.message === 'unauthorized') {
+          sessionStorage.removeItem(KEY);
+          document.getElementById('err').textContent = 'Contraseña incorrecta.';
+        } else {
+          document.getElementById('err').textContent = 'Error al cargar. Intentá de nuevo.';
+        }
+      });
+  }
+
+  document.getElementById('btnLogin').addEventListener('click', function(){
+    var pw = document.getElementById('pw').value.trim();
+    if (!pw) return;
+    load(pw);
+  });
+  document.getElementById('pw').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') document.getElementById('btnLogin').click();
+  });
+  document.getElementById('btnRefresh').addEventListener('click', function(){
+    var key = sessionStorage.getItem(KEY);
+    if (key) load(key);
+  });
+
+  var saved = sessionStorage.getItem(KEY);
+  if (saved) load(saved);
+})();
+</script>
+</body>
+</html>
