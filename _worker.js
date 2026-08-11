@@ -24,11 +24,8 @@ async function handleLead(request, env) {
   const nombre = str(body.nombre, 120);
   const email = str(body.email, 160);
   const empresa = str(body.empresa, 120);
-  const producto = str(body.producto, 1000);
-  const anchoMm = str(body.ancho_mm, 20);
-  const largoMm = str(body.largo_mm, 20);
-  const micraje = str(body.micraje, 60);
-  const volumenMensual = str(body.volumen_mensual, 60);
+  const producto = str(body.producto, 1500);
+  const cantidad = str(body.cantidad, 120);
   const origen = str(body.origen || "widget", 60);
 
   const missing = [];
@@ -36,18 +33,15 @@ async function handleLead(request, env) {
   if (!email || !EMAIL_RE.test(email)) missing.push("email");
   if (!empresa) missing.push("empresa");
   if (!producto) missing.push("producto");
-  if (!anchoMm) missing.push("ancho_mm");
-  if (!largoMm) missing.push("largo_mm");
-  if (!micraje) missing.push("micraje");
-  if (!volumenMensual) missing.push("volumen_mensual");
+  if (!cantidad) missing.push("cantidad");
   if (missing.length) {
     return json({ ok: false, error: "Faltan campos obligatorios: " + missing.join(", ") }, 400);
   }
 
   await env.DB.prepare(
-    `INSERT INTO leads (nombre, email, empresa, producto, ancho_mm, largo_mm, micraje, volumen_mensual, origen)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
-  ).bind(nombre, email, empresa, producto, anchoMm, largoMm, micraje, volumenMensual, origen).run();
+    `INSERT INTO leads (nombre, email, empresa, producto, cantidad, origen)
+     VALUES (?, ?, ?, ?, ?, ?)`
+  ).bind(nombre, email, empresa, producto, cantidad, origen).run();
 
   let mailSent = true;
   try {
@@ -60,9 +54,7 @@ async function handleLead(request, env) {
         `Correo: ${email}`,
         `Empresa: ${empresa}`,
         `Qué necesita: ${producto}`,
-        `Medidas (ancho x largo mm): ${anchoMm} x ${largoMm}`,
-        `Micraje: ${micraje}`,
-        `Cantidad mensual: ${volumenMensual}`,
+        `Cantidad: ${cantidad}`,
         `Origen: ${origen}`,
       ].join("\n"),
     });
@@ -80,7 +72,7 @@ async function handleLeadsList(request, env) {
     return json({ ok: false, error: "No autorizado" }, 401);
   }
   const { results } = await env.DB.prepare(
-    `SELECT id, nombre, email, empresa, producto, ancho_mm, largo_mm, micraje, volumen_mensual, origen, created_at
+    `SELECT id, nombre, email, empresa, producto, cantidad, origen, created_at
      FROM leads ORDER BY id DESC LIMIT 500`
   ).all();
   return json({ ok: true, leads: results });

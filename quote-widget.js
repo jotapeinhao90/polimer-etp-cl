@@ -48,42 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="form-group">
                         <label for="qwProducto">¿Qué necesitás? *</label>
-                        <textarea id="qwProducto" name="producto" placeholder="Ej: bolsas de basura industrial" required></textarea>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="qwAncho">Ancho (mm) *</label>
-                            <input type="number" id="qwAncho" name="ancho_mm" placeholder="Ej: 250" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="qwLargo">Largo (mm) *</label>
-                            <input type="number" id="qwLargo" name="largo_mm" placeholder="Ej: 400" min="1" required>
-                        </div>
+                        <textarea id="qwProducto" name="producto" placeholder="Ej: bolsas de basura industrial, 250x400mm, 50 micrones…" required></textarea>
+                        <span class="quote-widget-hint">Contanos medidas, micraje y para qué lo vas a usar — así podemos cotizar sin tener que preguntarte de nuevo.</span>
                     </div>
                     <div class="form-group">
-                        <label for="qwMicraje">Micraje / Calibre *</label>
-                        <select id="qwMicraje" name="micraje" required>
-                            <option value="">Seleccionar…</option>
-                            <option>20 micrones (muy ligero)</option>
-                            <option>30 micrones</option>
-                            <option>50 micrones (estándar)</option>
-                            <option>70 micrones</option>
-                            <option>100 micrones (resistente)</option>
-                            <option>150 micrones (muy resistente)</option>
-                            <option>200+ micrones (industrial)</option>
-                            <option>No lo sé, necesito asesoría</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="qwVolumen">Cantidad mensual estimada *</label>
-                        <select id="qwVolumen" name="volumen_mensual" required>
-                            <option value="">Seleccionar…</option>
-                            <option>300 – 500 kg/mes</option>
-                            <option>500 – 1.000 kg/mes</option>
-                            <option>1.000 – 3.000 kg/mes</option>
-                            <option>3.000 – 10.000 kg/mes</option>
-                            <option>Más de 10.000 kg/mes</option>
-                        </select>
+                        <label for="qwCantidad">Cantidad que necesitás *</label>
+                        <input type="text" id="qwCantidad" name="cantidad" placeholder="Ej: 500 kg/mes" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar solicitud de cotización →</button>
                     <div class="quote-widget-error" id="quoteWidgetError"></div>
@@ -137,10 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             empresa: document.getElementById('qwEmpresa').value.trim(),
             email: document.getElementById('qwEmail').value.trim(),
             producto: document.getElementById('qwProducto').value.trim(),
-            ancho_mm: document.getElementById('qwAncho').value.trim(),
-            largo_mm: document.getElementById('qwLargo').value.trim(),
-            micraje: document.getElementById('qwMicraje').value,
-            volumen_mensual: document.getElementById('qwVolumen').value,
+            cantidad: document.getElementById('qwCantidad').value.trim(),
             origen: location.pathname,
         };
 

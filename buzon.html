@@ -88,13 +88,11 @@
         '<td>' + escapeHtml(l.empresa || '—') + '</td>' +
         '<td><a class="mail-link" href="mailto:' + escapeHtml(l.email) + '">' + escapeHtml(l.email) + '</a></td>' +
         '<td class="wrap-cell">' + escapeHtml(l.producto || '—') + '</td>' +
-        '<td>' + escapeHtml((l.ancho_mm||'—') + ' × ' + (l.largo_mm||'—') + ' mm') + '</td>' +
-        '<td>' + escapeHtml(l.micraje || '—') + '</td>' +
-        '<td>' + escapeHtml(l.volumen_mensual || '—') + '</td>' +
+        '<td>' + escapeHtml(l.cantidad || '—') + '</td>' +
         '</tr>';
     }).join('');
     document.getElementById('tableWrap').innerHTML =
-      '<table><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Qué necesita</th><th>Medidas</th><th>Micraje</th><th>Cantidad</th></tr></thead><tbody>' + rows + '</tbody></table>';
+      '<table><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Qué necesita</th><th>Cantidad</th></tr></thead><tbody>' + rows + '</tbody></table>';
   }
 
   function load(key){

@@ -308,6 +308,7 @@ a { text-decoration: none; color: inherit; }
 .quote-widget-form label { display: block; font-size: .74rem; font-weight: 600; color: var(--text-light); margin-bottom: .25rem; }
 .quote-widget-form input, .quote-widget-form select, .quote-widget-form textarea { width: 100%; border: 1px solid var(--gray-200, #e2e8f0); border-radius: 8px; padding: .55rem .7rem; font-size: .85rem; font-family: inherit; }
 .quote-widget-form textarea { resize: vertical; min-height: 50px; }
+.quote-widget-hint { display: block; font-size: .72rem; color: var(--text-light); margin-top: .3rem; line-height: 1.35; }
 .quote-widget-form button { width: 100%; margin-top: .3rem; }
 .quote-widget-error { color: #dc2626; font-size: .78rem; margin-top: .4rem; min-height: 1.1em; }
 
