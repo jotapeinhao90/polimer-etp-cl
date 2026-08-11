@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buzón de contactos — ETP Polimer</title>
+<title>Buzón de cotizaciones — ETP Polimer</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="favicon.ico" sizes="any">
 <style>
   :root { --blue:#0a3d7a; --blue-light:#1a5cb8; --text:#1a2332; --text-light:#64748b; --border:#e2e8f0; --bg:#f8fafc; }
   * { box-sizing: border-box; }
   body { margin:0; font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
   header.top { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.75rem; flex-wrap:wrap; }
   h1 { font-size:1.4rem; margin:0; }
   .sub { color:var(--text-light); font-size:.9rem; margin-top:.25rem; }
@@ -23,22 +23,22 @@
   #login .err { color:#dc2626; font-size:.82rem; min-height:1.2em; }
 
   #panel { display:none; }
-  .card { background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
-  table { width:100%; border-collapse:collapse; font-size:.86rem; }
-  th, td { text-align:left; padding:.75rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; }
-  th { background:var(--bg); font-weight:600; color:var(--text-light); font-size:.78rem; text-transform:uppercase; letter-spacing:.03em; }
+  .card { background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.84rem; }
+  th, td { text-align:left; padding:.75rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; white-space:nowrap; }
+  td.wrap-cell { white-space:normal; max-width:260px; }
+  th { background:var(--bg); font-weight:600; color:var(--text-light); font-size:.76rem; text-transform:uppercase; letter-spacing:.03em; }
   tr:last-child td { border-bottom:none; }
-  .producto-cell { max-width:320px; white-space:pre-wrap; }
   .empty { padding:3rem 1rem; text-align:center; color:var(--text-light); }
-  .wa-link { color:#1DA851; font-weight:600; text-decoration:none; white-space:nowrap; }
-  .wa-link:hover { text-decoration:underline; }
   .loading { padding:2rem; text-align:center; color:var(--text-light); }
+  a.mail-link { color:var(--blue); text-decoration:none; font-weight:600; }
+  a.mail-link:hover { text-decoration:underline; }
 </style>
 </head>
 <body>
 
 <div id="login">
-  <h2>Buzón de contactos</h2>
+  <h2>Buzón de cotizaciones</h2>
   <p style="color:var(--text-light);font-size:.85rem;">Ingresá la contraseña que te entregó JPB Marketing.</p>
   <input type="password" id="pw" placeholder="Contraseña">
   <div class="err" id="err"></div>
@@ -48,13 +48,13 @@
 <div class="wrap" id="panel">
   <header class="top">
     <div>
-      <h1>Contactos recibidos por WhatsApp</h1>
+      <h1>Solicitudes de cotización</h1>
       <div class="sub" id="count">Cargando…</div>
     </div>
     <button class="btn" id="btnRefresh">Actualizar</button>
   </header>
   <div class="card">
-    <div id="tableWrap"><div class="loading">Cargando contactos…</div></div>
+    <div id="tableWrap"><div class="loading">Cargando…</div></div>
   </div>
 </div>
 
@@ -69,41 +69,36 @@
     } catch(e) { return iso; }
   }
 
-  function waLink(l){
-    var text = 'Hola ' + l.nombre + ', te contactamos de ETP Polimer respecto a tu consulta.';
-    var phone = (l.telefono || '').replace(/\D/g,'');
-    if (!phone) return null;
-    return 'https://wa.me/' + phone + '?text=' + encodeURIComponent(text);
-  }
-
-  function render(leads){
-    document.getElementById('count').textContent = leads.length + ' contacto' + (leads.length===1?'':'s');
-    if (!leads.length) {
-      document.getElementById('tableWrap').innerHTML = '<div class="empty">Todavía no llegaron contactos por el formulario.</div>';
-      return;
-    }
-    var rows = leads.map(function(l){
-      var wa = waLink(l);
-      return '<tr>' +
-        '<td>' + fmtDate(l.created_at) + '</td>' +
-        '<td>' + escapeHtml(l.nombre) + '</td>' +
-        '<td>' + escapeHtml(l.empresa || '—') + '</td>' +
-        '<td>' + (wa ? '<a class="wa-link" href="'+wa+'" target="_blank" rel="noopener">' + escapeHtml(l.telefono) + '</a>' : escapeHtml(l.telefono || '—')) + '</td>' +
-        '<td class="producto-cell">' + escapeHtml(l.producto || '—') + '</td>' +
-        '</tr>';
-    }).join('');
-    document.getElementById('tableWrap').innerHTML =
-      '<table><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Teléfono</th><th>Consulta</th></tr></thead><tbody>' + rows + '</tbody></table>';
-  }
-
   function escapeHtml(str){
     return String(str == null ? '' : str).replace(/[&<>"']/g, function(c){
       return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
   }
 
+  function render(leads){
+    document.getElementById('count').textContent = leads.length + ' solicitud' + (leads.length===1?'':'es');
+    if (!leads.length) {
+      document.getElementById('tableWrap').innerHTML = '<div class="empty">Todavía no llegaron solicitudes por el formulario.</div>';
+      return;
+    }
+    var rows = leads.map(function(l){
+      return '<tr>' +
+        '<td>' + fmtDate(l.created_at) + '</td>' +
+        '<td>' + escapeHtml(l.nombre) + '</td>' +
+        '<td>' + escapeHtml(l.empresa || '—') + '</td>' +
+        '<td><a class="mail-link" href="mailto:' + escapeHtml(l.email) + '">' + escapeHtml(l.email) + '</a></td>' +
+        '<td class="wrap-cell">' + escapeHtml(l.producto || '—') + '</td>' +
+        '<td>' + escapeHtml((l.ancho_mm||'—') + ' × ' + (l.largo_mm||'—') + ' mm') + '</td>' +
+        '<td>' + escapeHtml(l.micraje || '—') + '</td>' +
+        '<td>' + escapeHtml(l.volumen_mensual || '—') + '</td>' +
+        '</tr>';
+    }).join('');
+    document.getElementById('tableWrap').innerHTML =
+      '<table><thead><tr><th>Fecha</th><th>Nombre</th><th>Empresa</th><th>Correo</th><th>Qué necesita</th><th>Medidas</th><th>Micraje</th><th>Cantidad</th></tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
   function load(key){
-    document.getElementById('tableWrap').innerHTML = '<div class="loading">Cargando contactos…</div>';
+    document.getElementById('tableWrap').innerHTML = '<div class="loading">Cargando…</div>';
     fetch('/api/leads', { headers: { 'x-buzon-key': key } })
       .then(function(r){
         if (r.status === 401) throw new Error('unauthorized');

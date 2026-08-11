@@ -1,5 +1,5 @@
-const CLIENT_EMAIL = "ventas@polimer-etp.cl";
-const WHATSAPP_NUMBER = "56933643058";
+const CLIENT_EMAIL = "cbayas@polymer.cl";
+const CC_EMAIL = "jpbayas@jpbmarketing.cl";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -7,6 +7,8 @@ function json(data, status = 200) {
     headers: { "content-type": "application/json; charset=utf-8" },
   });
 }
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 async function handleLead(request, env) {
   let body;
@@ -16,41 +18,59 @@ async function handleLead(request, env) {
     return json({ ok: false, error: "JSON inválido" }, 400);
   }
 
-  const nombre = (body.nombre || "").toString().trim().slice(0, 120);
-  const empresa = (body.empresa || "").toString().trim().slice(0, 120);
-  const producto = (body.producto || "").toString().trim().slice(0, 1000);
-  const telefono = (body.telefono || "").toString().trim().slice(0, 40);
-  const origen = (body.origen || "widget").toString().trim().slice(0, 60);
+  const str = (v, max) => (v == null ? "" : String(v).trim().slice(0, max));
+  const nombre = str(body.nombre, 120);
+  const email = str(body.email, 160);
+  const empresa = str(body.empresa, 120);
+  const producto = str(body.producto, 1000);
+  const anchoMm = str(body.ancho_mm, 20);
+  const largoMm = str(body.largo_mm, 20);
+  const micraje = str(body.micraje, 60);
+  const volumenMensual = str(body.volumen_mensual, 60);
+  const origen = str(body.origen || "widget", 60);
 
-  if (!nombre || !producto) {
-    return json({ ok: false, error: "Falta nombre o producto" }, 400);
+  const missing = [];
+  if (!nombre) missing.push("nombre");
+  if (!email || !EMAIL_RE.test(email)) missing.push("email");
+  if (!empresa) missing.push("empresa");
+  if (!producto) missing.push("producto");
+  if (!anchoMm) missing.push("ancho_mm");
+  if (!largoMm) missing.push("largo_mm");
+  if (!micraje) missing.push("micraje");
+  if (!volumenMensual) missing.push("volumen_mensual");
+  if (missing.length) {
+    return json({ ok: false, error: "Faltan campos obligatorios: " + missing.join(", ") }, 400);
   }
 
   await env.DB.prepare(
-    "INSERT INTO leads (nombre, empresa, telefono, producto, origen) VALUES (?, ?, ?, ?, ?)"
-  ).bind(nombre, empresa, telefono, producto, origen).run();
+    `INSERT INTO leads (nombre, email, empresa, producto, ancho_mm, largo_mm, micraje, volumen_mensual, origen)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+  ).bind(nombre, email, empresa, producto, anchoMm, largoMm, micraje, volumenMensual, origen).run();
 
+  let mailSent = true;
   try {
-    await fetch(`https://formsubmit.co/ajax/${CLIENT_EMAIL}`, {
+    const res = await fetch(`https://formsubmit.co/ajax/${CLIENT_EMAIL}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
-        _subject: `Nuevo contacto por WhatsApp — ${nombre}${empresa ? " (" + empresa + ")" : ""}`,
+        _subject: `Nueva cotización desde el sitio — ${nombre} (${empresa})`,
+        _cc: CC_EMAIL,
         Nombre: nombre,
-        Empresa: empresa || "-",
-        Teléfono: telefono || "-",
-        Producto: producto,
+        Correo: email,
+        Empresa: empresa,
+        "Qué necesita": producto,
+        "Medidas (ancho x largo mm)": `${anchoMm} x ${largoMm}`,
+        Micraje: micraje,
+        "Cantidad mensual": volumenMensual,
         Origen: origen,
       }),
     });
-  } catch (e) {
-    // El lead ya quedó guardado en D1; el mail es best-effort.
+    mailSent = res.ok;
+  } catch {
+    mailSent = false;
   }
 
-  const waText = `Hola, soy ${nombre}${empresa ? " de " + empresa : ""}. ${producto}`;
-  const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
-
-  return json({ ok: true, whatsapp: waLink });
+  return json({ ok: true, mailSent });
 }
 
 async function handleLeadsList(request, env) {
@@ -59,7 +79,8 @@ async function handleLeadsList(request, env) {
     return json({ ok: false, error: "No autorizado" }, 401);
   }
   const { results } = await env.DB.prepare(
-    "SELECT id, nombre, empresa, telefono, producto, origen, created_at FROM leads ORDER BY id DESC LIMIT 500"
+    `SELECT id, nombre, email, empresa, producto, ancho_mm, largo_mm, micraje, volumen_mensual, origen, created_at
+     FROM leads ORDER BY id DESC LIMIT 500`
   ).all();
   return json({ ok: true, leads: results });
 }
