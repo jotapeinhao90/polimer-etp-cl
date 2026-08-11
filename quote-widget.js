@@ -8,6 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const waFloat = document.querySelector('.wa-float');
     const waHref = waFloat ? waFloat.getAttribute('href') : 'https://wa.me/56933643058';
 
+    if (waFloat) {
+        const WA_BUBBLE_SHOW_AFTER = 2500;
+        const WA_BUBBLE_HIDE_AFTER = 9000;
+        const WA_BUBBLE_SESSION_KEY = 'wa_bubble_shown';
+
+        let waBubbleAlreadyShown = false;
+        try { waBubbleAlreadyShown = sessionStorage.getItem(WA_BUBBLE_SESSION_KEY) === '1'; } catch (e) {}
+
+        if (!waBubbleAlreadyShown) {
+            setTimeout(() => {
+                const bubble = document.createElement('div');
+                bubble.className = 'wa-teaser-bubble';
+                bubble.innerHTML = `
+                    <button type="button" class="wa-teaser-close" aria-label="Cerrar">&times;</button>
+                    <strong>¡Cotizá rápido por WhatsApp acá!</strong>
+                `;
+                document.body.appendChild(bubble);
+                requestAnimationFrame(() => bubble.classList.add('show'));
+                try { sessionStorage.setItem(WA_BUBBLE_SESSION_KEY, '1'); } catch (e) {}
+
+                let hideTimer = setTimeout(hideBubble, WA_BUBBLE_HIDE_AFTER);
+                function hideBubble() {
+                    bubble.classList.remove('show');
+                    setTimeout(() => bubble.remove(), 300);
+                }
+
+                bubble.querySelector('.wa-teaser-close').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    clearTimeout(hideTimer);
+                    hideBubble();
+                });
+                bubble.addEventListener('click', () => {
+                    clearTimeout(hideTimer);
+                    waFloat.click();
+                    hideBubble();
+                });
+            }, WA_BUBBLE_SHOW_AFTER);
+        }
+    }
+
     const toggle = document.createElement('button');
     toggle.className = 'quote-widget-toggle';
     toggle.setAttribute('aria-label', 'Abrir formulario de cotización');
@@ -57,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <button type="submit" class="btn btn-primary">Enviar solicitud de cotización →</button>
                     <div class="quote-widget-error" id="quoteWidgetError"></div>
+                    <span class="quote-widget-privacy">Tus datos se usan solo para cotizar. Sin spam.</span>
                 </form>
             </div>
             <div class="quote-widget-pane" data-pane="whatsapp">
@@ -93,6 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
     try { alreadyShown = sessionStorage.getItem(SESSION_KEY) === '1'; } catch (e) {}
     if (!alreadyShown) {
         setTimeout(openPanel, SHOW_AFTER);
+
+        function handleExitIntent(e) {
+            if (e.clientY > 0 || e.relatedTarget) return;
+            let shown = false;
+            try { shown = sessionStorage.getItem(SESSION_KEY) === '1'; } catch (err) {}
+            document.removeEventListener('mouseout', handleExitIntent);
+            if (!shown) openPanel();
+        }
+        document.addEventListener('mouseout', handleExitIntent);
     }
 
     const form = document.getElementById('quoteWidgetForm');
